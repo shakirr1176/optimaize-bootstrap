@@ -1,0 +1,12 @@
+@mixin responsive-font($sm, $xl, $xxl) {
+    font-size: $sm;
+
+    @media (min-width: 1200px) {
+        font-size: $xl;
+    }
+
+    @media (min-width: 1400px) {
+        font-size: $xxl;
+    }
+}
+

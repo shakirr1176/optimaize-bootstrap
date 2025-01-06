@@ -1,0 +1,84 @@
+@import "responsive";
+
+$fonts: (
+  "34": (
+    18px,
+    24px,
+    32px,
+  ),
+  "24": (
+    16px,
+    20px,
+    24px,
+  ),
+  "20": (
+    14px,
+    18px,
+    20px,
+  ),
+  "19": (
+    14px,
+    16px,
+    20px,
+  ),
+  "18": (
+    13px,
+    14px,
+    18px,
+  ),
+  "16": (
+    11px,
+    13px,
+    16px,
+  ),
+  "14": (
+    10px,
+    11px,
+    14px,
+  ),
+  "13": (
+    10px,
+    null,
+    13px,
+  ),
+  "12": (
+    9px,
+    10px,
+    12px,
+  ),
+);
+
+// Declare all mixins manually
+@mixin font-34 {
+  @include responsive-font(18px, 24px, 32px);
+}
+@mixin font-24 {
+  @include responsive-font(16px, 20px, 24px);
+}
+@mixin font-20 {
+  @include responsive-font(14px, 18px, 20px);
+}
+@mixin font-19 {
+  @include responsive-font(14px, 16px, 20px);
+}
+@mixin font-18 {
+  @include responsive-font(13px, 14px, 18px);
+}
+@mixin font-16 {
+  @include responsive-font(11px, 13px, 16px);
+}
+@mixin font-14 {
+  @include responsive-font(10px, 11px, 14px);
+}
+@mixin font-13 {
+  @include responsive-font(10px, null, 13px);
+}
+@mixin font-12 {
+  @include responsive-font(9px, 10px, 12px);
+}
+
+@each $key, $sizes in $fonts {
+    .font-#{$key} {
+      @include responsive-font(nth($sizes, 1), nth($sizes, 2), nth($sizes, 3));
+    }
+  }
