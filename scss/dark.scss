@@ -1,6 +1,17 @@
-// @import "./variable";
+@use "./variable";
 
 .dark {
+  header {
+    .dark-light {
+      .light-icon {
+        display: none;
+      }
+      .dark-icon {
+        display: block;
+        color: $branco-sujo;
+      }
+    }
+  }
   
   .loader-line {
     box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);

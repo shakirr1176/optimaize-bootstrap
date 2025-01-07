@@ -1,0 +1,159 @@
+.auth-container {
+  padding-left: 24px;
+  padding-right: 24px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  @media (min-width: 1536px) {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+  .auth-main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    .auth-form {
+      position: relative;
+      max-width: 100%;
+      background-color: $optm-gray-300;
+      padding-left: 24px;
+      padding-right: 24px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+      position: relative;
+      border-radius: 0.5rem;
+
+      @media (min-width: 640px) {
+        max-width: 36rem;
+      }
+
+      @media (min-width: 768px) {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+
+      @media (min-width: 1024px) {
+        max-width: 800px;
+        padding-left: 64px;
+        padding-right: 64px;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        padding: 80px 128px;
+      }
+
+      @media (min-width: 1536px) {
+        max-width: 1000px;
+        padding: 80px 128px;
+      }
+
+      .auth-positional-image {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 428px;
+        @media (min-width: 1280px) {
+          display: block;
+        }
+        display: none;
+      }
+
+      .auth-image {
+        object-fit: cover;
+        object-position: center;
+        max-width: 320px;
+        height: 240px;
+        margin-left: auto;
+        margin-right: auto;
+      
+        @media (min-width: 1280px) {
+          max-width: 384px;
+          margin-left: 0;
+          margin-right: 0;
+        }
+      
+        @media (min-width: 1536px) {
+          height: 384px;
+        }
+      }
+      
+
+      .title {
+        @include font-24;
+        text-align: center;
+        font-weight: 500;
+        color: $dark_2;
+      }
+      .title-style {
+        width: 2.5rem;
+        height: 0.25rem;
+        background-color: $optm-purple;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.5rem;
+      }
+
+      .field-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        color: $dark_2;
+      }
+
+      input {
+        outline: none;
+        width: 100%;
+        background-color: transparent;
+
+        &::placeholder {
+          color: #6b7280;
+        }
+      }
+
+      .passwordFields {
+        input {
+          margin-right: 20px;
+        }
+        position: relative;
+        .eye {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 10px;
+          cursor: pointer;
+        }
+
+        .open-eye,
+        .close-eye {
+          margin-right: 0;
+          width: 17px;
+          @media (min-width: 1536px) {
+            width: 18px;
+          }
+        }
+        .close-eye {
+          display: none;
+        }
+        &.active {
+          .close-eye {
+            display: block;
+          }
+          .open-eye {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

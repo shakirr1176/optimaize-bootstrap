@@ -1,14 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <div class="p-5">
-        <h1 class="font-18">hello world</h1>
+    <div class="gradient-circle dark:hidden"></div>
+    <div class="main-layout d-flex min-vh-100">
+        <div id="collapse-sidebar" class="expand-sidebar">
+            <div>
+                <div class="shadow-layer"></div>
+                <div class="icon-wrapper">
+                    <a class="w-100" href="http://optimaize.test">
+
+                        <img class="menu-logo-expand" src="http://optimaize.test/storage/images/logo-dark.png" alt="">
+
+                        <!-- <img class="menu-logo-expand"
+                            src="http://optimaize.test/storage/images/logo.png" alt=""> -->
+
+                        <!-- <img class="dark menu-logo-collapse"
+                            src="http://optimaize.test/storage/images/logo-sm.png" alt=""> -->
+
+                        <img class="light menu-logo-collapse"
+                            src="http://optimaize.test/storage/images/logo-sm-dark.png" alt="">
+                    </a>
+                </div>
+                <div class="root-item drop-down-item">
+                    <ul class="duration-300 sidebar-bg w-full">
+                        <li class="position-relative">
+                            <a href="index.html" title="Dashbaord"
+                                class="drop-down-header">
+                                <span class="d-flex align-items-center fw-medium">
+                                    <span class="menu-icon">
+                                        <svg class="w-100" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true" data-slot="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                                            </path>
+                                        </svg> </span>
+                                    <span
+                                        class="menu-title">Dashbaord</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="position-relative">
+                            <a href="javascript:" title="Application Control"
+                                class="drop-down-header">
+                                <span class="d-flex align-items-center fw-medium">
+                                    <span class="menu-icon">
+                                        <svg class="w-100" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true" data-slot="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75">
+                                            </path>
+                                        </svg> </span>
+                                    <span
+                                        class="menu-title">Application
+                                        Control</span>
+                                </span>
+                                <svg class="menu-arrow" width="7" height="11"
+                                    viewBox="0 0 7 11" fill="none">
+                                    <path
+                                        d="M6.66323 4.98326C6.73019 5.05022 6.76367 5.12723 6.76367 5.21429C6.76367 5.30134 6.73019 5.37835 6.66323 5.44531L1.98242 10.1261C1.91546 10.1931 1.83845 10.2266 1.7514 10.2266C1.66434 10.2266 1.58733 10.1931 1.52037 10.1261L1.01814 9.62388C0.951172 9.55692 0.91769 9.47991 0.91769 9.39286C0.91769 9.3058 0.951172 9.22879 1.01814 9.16183L4.96568 5.21429L1.01814 1.26674C0.951172 1.19978 0.91769 1.12277 0.91769 1.03571C0.91769 0.94866 0.951172 0.871651 1.01814 0.804688L1.52037 0.302455C1.58733 0.23549 1.66434 0.202008 1.7514 0.202008C1.83845 0.202008 1.91546 0.23549 1.98242 0.302455L6.66323 4.98326Z"
+                                        fill="currentColor" fill-opacity="0.8"></path>
+                                </svg>
+                            </a>
+                            <div class="drop-down-item overflow-hidden sub-item" data-collapse="false" style="height: 0px;">
+                                <ul class="duration-300 sidebar-bg w-100">
+                                    <li class="position-relative">
+                                        <span
+                                            class="header-line">
+                                        </span>
+                                        <a href="javascript:;" title="Application Setting"
+                                            class="drop-down-header ">
+                                            <span
+                                                class="">
+                                                Application Setting
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="position-relative">
+                                        <span
+                                            class="header-line">
+                                        </span>
+                                        <a href="http://optimaize.test/admin/roles" title="Role Management"
+                                            class="drop-down-header ">
+                                            <span
+                                                class="">
+                                                Role Management
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="position-relative">
+                                        <span
+                                            class="header-line">
+                                        </span>
+                                        <a href="javascript:;" title="Language Management"
+                                            class="drop-down-header">
+                                            <span
+                                                class="">
+                                                Language Management
+                                            </span>
+                                            <svg class="menu-arrow" width="7"
+                                                height="11" viewBox="0 0 7 11" fill="none">
+                                                <path
+                                                    d="M6.66323 4.98326C6.73019 5.05022 6.76367 5.12723 6.76367 5.21429C6.76367 5.30134 6.73019 5.37835 6.66323 5.44531L1.98242 10.1261C1.91546 10.1931 1.83845 10.2266 1.7514 10.2266C1.66434 10.2266 1.58733 10.1931 1.52037 10.1261L1.01814 9.62388C0.951172 9.55692 0.91769 9.47991 0.91769 9.39286C0.91769 9.3058 0.951172 9.22879 1.01814 9.16183L4.96568 5.21429L1.01814 1.26674C0.951172 1.19978 0.91769 1.12277 0.91769 1.03571C0.91769 0.94866 0.951172 0.871651 1.01814 0.804688L1.52037 0.302455C1.58733 0.23549 1.66434 0.202008 1.7514 0.202008C1.83845 0.202008 1.91546 0.23549 1.98242 0.302455L6.66323 4.98326Z"
+                                                    fill="currentColor" fill-opacity="0.8"></path>
+                                            </svg>
+                                        </a>
+                                        <div class="drop-down-item overflow-hidden" data-collapse="false" style="height: 0px;">
+                                            <ul class="duration-300 sidebar-bg w-full">
+                                                <li class="position-relative">
+                                                    <span
+                                                        class="header-line">
+                                                    </span>
+                                                    <a href="javascript:;"
+                                                        title="Language List"
+                                                        class="drop-down-header ">
+                                                        <span
+                                                            class="">
+                                                            Language List
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="position-relative">
+                                                    <span
+                                                        class="header-line">
+                                                    </span>
+                                                    <a href="javascript:;"
+                                                        title="Language Setting"
+                                                        class="drop-down-header ">
+                                                        <span
+                                                            class="">
+                                                            Language Setting
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="position-relative">
+                                        <span
+                                            class="header-line">
+                                        </span>
+                                        <a href="javascript:;" title="Logs"
+                                            class="drop-down-header">
+                                            <span
+                                                class="">
+                                                Logs
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul>
+                <li>as</li>
+            </ul>
+        </div>
+        <div class="d-flex flex-column main-content overflow-auto w-100 main-section-scroll">
+            <header class="gap-2 justify-content-between align-items-center p-3">
+                <button id="sidebar-collapse-button">
+                    <svg stroke="currentColor" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="2.00152e-07" y1="16.5" x2="20" y2="16.5" stroke="currentColor" stroke-width="3">
+                        </line>
+                        <line x1="2.23158e-07" y1="9" x2="20" y2="9" stroke="currentColor" stroke-width="3"></line>
+                        <line x1="2.23158e-07" y1="1.5" x2="13.3333" y2="1.5" stroke="currentColor" stroke-width="3">
+                        </line>
+                    </svg>
+                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="position-relative">
+                        <span class="notification-number-wrapper">
+                            0
+                        </span>
+                        <button class="icon-btn hover-dropdown-box">
+                            <svg class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="d-none dropdown-show-box notifications-wrapper">
+                            <div class="notifications">
+                                <div class="content font-16">
+                                    You have 0 notifications
+                                </div>
+                                <ul class="notifications-list font-16">
+                                    <li class="">
+                                    </li>
+                                </ul>
+                                <div class="see-all font-14">
+                                    <a href="javascript:;">See All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dark-light icon-btn">
+                        <span class="relative pointer-events-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="light-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z">
+                                </path>
+                            </svg>
+
+                            <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="position-relative">
+                        <button class="icon-btn font-16 hover-dropdown-box">
+                            EN
+                        </button>
+                        <ul class="d-none dropdown-show-box">
+                            <li><a class="dropdown-list-color active" href="#" onclick="setLang('en')">EN</a></li>
+                            <li><a class="dropdown-list-color" href="#" onclick="setLang('pt')">PT</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="profile position-relative">
+                        <div class="icon-btn font-16 hover-dropdown-box">
+                            <div
+                                class="px-3 py-1 text-align-start pe-none d-flex gap-2 justify-content-end align-items-center">
+                                <div>
+                                    <h3 class=" overflow-hidden text-ellipsis font-14 font-medium uppercas">
+                                        Jules
+                                    </h3>
+                                    <p class="overflow-hidden text-ellipsis font-12">
+                                        System-admin
+                                    </p>
+                                </div>
+                                <img src="http://optimaize.test/storage/images/users/avatar.jpg" alt="">
+                            </div>
+                        </div>
+                        <ul class="d-none dropdown-show-box">
+                            <li><a class="dropdown-list-color">Profile</a></li>
+                            <li><a class="dropdown-list-color" href="#">Edit profile</a></li>
+                            <li><a class="dropdown-list-color" href="#">Setting</a></li>
+                            <li><a class="dropdown-list-color" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </header>
+            <div class="p-3 flex-1 font-16">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae fuga distinctio aliquid magnam
+                totam tempore tempora nostrum assumenda. Eligendi enim accusantium voluptates saepe, deleniti vero
+                soluta fugit quos obcaecati. Assumenda.
+            </div>
+        </div>
     </div>
+    <script src="./public/js/sidebar.js"></script>
+    <script src="./public/js/theme-switch.js"></script>
+    <script src="./public/js/header.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,332 @@
+$sidebar-bg-light: #f8f9fa;
+$sidebar-bg-dark: #151839;
+
+$sidebar-expand-width: 300px;
+$sidebar-collapse-width: 104px;
+
+$sidebar-expand-width-lg: 230px;
+$sidebar-collapse-width-lg: 96px;
+
+$sidebar-transition: 0.3s ease-out;
+$active-color: #7b48d3;
+$light-gray: #d6d6d6;
+$dark-purple: #3e2a47;
+$items-route-color-light: #d6d6d6;
+
+body {
+  &.has-expand-sidebar {
+    overflow: hidden;
+  }
+}
+
+#collapse-sidebar {
+  transition: all $sidebar-transition;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $sidebar-bg-light;
+  flex-shrink: 0;
+
+  .drop-down-item {
+    transition: all $sidebar-transition;
+    &.sub-item {
+      margin-left: 30px;
+      .drop-down-item {
+        margin-left: 30px;
+      }
+    }
+
+    .header-line {
+      display: block;
+      width: 10px;
+      height: 2px;
+      position: absolute;
+      top: 18px;
+      transform: translateY(-50%);
+      left: 0px;
+      background: $items-route-color-light;
+
+      @media (min-width: 1536px) {
+        top: 21px;
+      }
+    }
+  }
+  .icon-wrapper {
+    transition: all $sidebar-transition;
+    background: $sidebar-bg-light;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    overflow: hidden;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+
+    @media (min-width: 1536px) {
+      height: 80px;
+    }
+
+    .menu-logo-expand {
+      width: 100%;
+    }
+  }
+
+  .menu-logo-collapse {
+    margin: auto;
+    width: 32px;
+    @media (min-width: 1536px) {
+      width: 36px;
+    }
+  }
+
+  .drop-down-header {
+    @include font-14;
+    display: flex;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    text-transform: capitalize;
+    transition: 0.2s;
+    color: $dark_2;
+    white-space: nowrap;
+    .menu-arrow {
+      transition: all $sidebar-transition;
+    }
+    &.active-on {
+      .menu-arrow {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .menu-title {
+    padding: 0 10px;
+    width: 128px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @media (min-width: 1280px) {
+      width: 128px;
+    }
+    @media (min-width: 1536px) {
+      width: 192px;
+      padding: 0 14px;
+    }
+  }
+
+  &.expand-sidebar {
+    width: $sidebar-expand-width-lg;
+    height: 100vh;
+    overflow-y: scroll;
+
+    @media (min-width: 1536px) {
+      width: $sidebar-expand-width;
+    }
+
+    .menu-logo-collapse {
+      display: none;
+    }
+
+    .footer {
+      font-size: 12px;
+    }
+
+    .expand-menu-icon {
+      display: none;
+    }
+
+    .menu-icon {
+      width: 18px;
+      height: 18px;
+
+      @media (min-width: 1536px) {
+        width: 22px;
+        height: 22px;
+      }
+    }
+    .shadow-layer {
+      width: $sidebar-expand-width-lg;
+
+      @media (min-width: 1536px) {
+        width: $sidebar-expand-width;
+      }
+    }
+
+    .root-item > ul ul li {
+      border-left: 2px solid $items-route-color-light;
+    }
+
+    .root-item > ul ul li:last-child {
+      border-color: transparent;
+    }
+
+    .root-item > ul ul li:last-child::after {
+      background-color: $items-route-color-light;
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      top: -1px;
+      left: -2px;
+      width: 2px;
+      height: 40px;
+      transform: translateY(-50%);
+      @media (min-width: 1536px) {
+        top: 2px;
+      }
+    }
+
+    .root-item > ul ul li::before {
+      background-color: $items-route-color-light;
+      content: "";
+      position: absolute;
+      top: -16px;
+      left: -2px;
+      width: 2px;
+      height: 16px;
+    }
+
+    .root-item > ul ul li:last-child::before {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -2px;
+      width: 2.5px;
+      height: 6px;
+      background: transparent;
+    }
+  }
+
+  &.collapse-sidebar {
+    width: $sidebar-collapse-width-lg;
+    height: inherit;
+    overflow: visible;
+    @media (min-width: 1536px) {
+      width: $sidebar-collapse-width;
+    }
+
+    .drop-down-header {
+      justify-content: center;
+    }
+
+    .menu-arrow {
+      display: none;
+    }
+
+    .icon-wrapper {
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .menu-logo-expand {
+      display: none;
+    }
+
+    .footer {
+      font-size: 10px; // 0.625rem
+      padding-top: 16px; // 1rem
+      text-align: center;
+    }
+
+    .collapse-menu-icon {
+      display: none;
+    }
+
+    .menu-icon {
+      width: 24px;
+      height: 24px;
+    }
+    .menu-title {
+      display: none;
+    }
+    .shadow-layer {
+      width: $sidebar-collapse-width-lg;
+      @media (min-width: 1536px) {
+        width: $sidebar-collapse-width;
+      }
+    }
+    .header-line {
+      display: none;
+    }
+  
+
+    .sub-item {
+      position: absolute;
+      left: 100%;
+      top: 0px;
+      margin-left: 0px !important;
+      width: 270px;
+      background: $sidebar-bg-light;
+      .drop-down-header {
+        justify-content: space-between;
+      }
+      .drop-down-item{
+        margin-left: 16px;
+      }
+      .menu-arrow{
+        display: block;
+      }
+    }
+
+    .sub-item > ul {
+      padding: 16px;
+      padding-left: 0px;
+      overflow-y: auto;
+    }
+  }
+
+  .header-line {
+    background-color: $light-gray;
+    background-color: $dark-purple;
+
+    &.collapse-sidebar {
+      display: none;
+    }
+  }
+
+  .active-menu,
+  .active-on,
+  .drop-down-header:hover {
+    background: linear-gradient(to right, transparent, rgba(123, 72, 211, 0.1));
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      border-radius: 6px 0 0 6px;
+      background-color: $active-color;
+    }
+  }
+
+  .main-section-scroll {
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .shadow-layer {
+    transition: all 0.3s ease;
+    position: fixed;
+    height: 100vh;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    box-shadow: 0 0;
+    transition-duration: 300ms;
+    box-shadow: 5px 0px 10px rgba(56, 65, 74, 0.089);
+    z-index: 99;
+  }
+
+  .expand-sidebar .expand-menu-icon,
+  .collapse-sidebar .collapse-menu-icon {
+    display: none;
+  }
+}
