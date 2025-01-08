@@ -25,10 +25,10 @@
                 a.innerHTML =
                     selElmnt.options[selElmnt.selectedIndex].innerHTML;
                 x[i].appendChild(a);
-                b = document.createElement("DIV");
+                b = document.createElement("ul");
                 b.setAttribute("class", "select-items select-hide");
                 for (j = 1; j < ll; j++) {
-                    c = document.createElement("DIV");
+                    c = document.createElement("li");
                     c.innerHTML = selElmnt.options[j].innerHTML;
                     c.setAttribute("data-value", selElmnt.options[j].value);
                     c.removeAttribute("class");

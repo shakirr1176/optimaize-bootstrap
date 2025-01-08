@@ -157,8 +157,22 @@
                     </ul>
                 </div>
             </div>
-            <ul>
-                <li>as</li>
+            <ul class="position-sticky bottom-end pb-5">
+                <li class="position-relative">
+                    <a href="javascript:;" title="logout" class="drop-down-header">
+                        <span class="d-flex align-items-center fw-medium">
+                            <span class="menu-icon">
+                                <svg class="w-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="menu-title">Logout</span>
+                        </span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="d-flex flex-column main-content overflow-auto w-100 main-section-scroll">
@@ -177,7 +191,7 @@
                         <span class="notification-number-wrapper">
                             0
                         </span>
-                        <button class="icon-btn hover-dropdown-box">
+                        <button class="icon-btn dropdown-box">
                             <svg class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -219,8 +233,8 @@
                         </span>
                     </div>
 
-                    <div class="position-relative">
-                        <button class="icon-btn font-16 hover-dropdown-box">
+                    <div class="language position-relative">
+                        <button class="icon-btn font-16 dropdown-box">
                             EN
                         </button>
                         <ul class="d-none dropdown-show-box">
@@ -230,7 +244,7 @@
                     </div>
 
                     <div class="profile position-relative">
-                        <div class="icon-btn font-16 hover-dropdown-box">
+                        <div class="icon-btn font-16 dropdown-box">
                             <div
                                 class="px-3 py-1 text-align-start pe-none d-flex gap-2 justify-content-end align-items-center">
                                 <div>
@@ -245,31 +259,166 @@
                             </div>
                         </div>
                         <ul class="d-none dropdown-show-box">
-                            <li><a class="dropdown-list-color">Profile</a></li>
+                            <li><a class="dropdown-list-color" href="#">Profile</a></li>
                             <li><a class="dropdown-list-color" href="#">Edit profile</a></li>
                             <li><a class="dropdown-list-color" href="#">Setting</a></li>
                             <li><a class="dropdown-list-color" href="#">Logout</a></li>
                         </ul>
                     </div>
-
                 </div>
             </header>
             <main class="flex-1">
 
-                <div class="filter">
-                    Filter here...
+                <div id="breadcrumb">
+                    <h3 class="font-bold font-34 capitalize text-dark_2 dark:text-optm-gray-200">Products</h3>
+                </div>
+
+                <div class="gap-2 d-flex flex-wrap justify-content-between align-items-center">
+                    <form autocomplete="off" class="filter-form d-flex gap-2" action="" method="">
+                        <div id="search-by-name" class="custom-select left">
+                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <select name="" id="">
+                                <option value="">Please select</option>
+                                <option selected value="all">All</option>
+                                <option value="product_name">Product name</option>
+                            </select>
+                        </div>
+                        <div class="custom-select">
+                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <select name="" id="">
+                                <option value="">Please select</option>
+                                <option selected value="similar">Similar</option>
+                                <option value="exact">Exact</option>
+                            </select>
+                        </div>
+                        <div class="search-wrapper">
+                            <button class="search-btn" type="submit">
+                                <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                                </svg>
+                            </button>
+                            <input type="text" placeholder="Search">
+                            <button class="cancel-btn">
+                                <svg class="cancel-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="position-relative">
+                            <div class="dropdown-box menu-drop-down-field">
+                                10
+                                <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </div>
+                            <ul class="row-show-options dropdown-show-box d-none">
+                                <li class="dropdown-list-color">10</li>
+                                <li class="dropdown-list-color">20</li>
+                                <li class="dropdown-list-color">30</li>
+                            </ul>
+                        </div>
+                    </form>
+                    <div class="d-flex gap-2">
+                        <button class="def-logo-btn-1">
+                            
+                        </button>
+                        <div class="position-relative">
+                            <button class="dropdown-box def-logo-btn-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M19.5 21a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-5.379a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H4.5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h15Zm-6.75-10.5a.75.75 0 0 0-1.5 0v4.19l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V10.5Z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                
+                            </button>
+                            <ul class="text-nowrap dropdown-show-box d-none">
+                                <li>
+                                    <a class="dropdown-list-color" href="">Download as PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-list-color" href="">Download as CSV</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="position-relative">
+                            <button class="dropdown-box def-logo-btn-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                                    aria-hidden="true" data-slot="icon">
+                                    <path fill-rule="evenodd"
+                                        d="M3.792 2.938A49.069 49.069 0 0 1 12 2.25c2.797 0 5.54.236 8.209.688a1.857 1.857 0 0 1 1.541 1.836v1.044a3 3 0 0 1-.879 2.121l-6.182 6.182a1.5 1.5 0 0 0-.439 1.061v2.927a3 3 0 0 1-1.658 2.684l-1.757.878A.75.75 0 0 1 9.75 21v-5.818a1.5 1.5 0 0 0-.44-1.06L3.13 7.938a3 3 0 0 1-.879-2.121V4.774c0-.897.64-1.683 1.542-1.836Z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                            <div class="prevent-outside-click filter-options dropdown-show-box d-none">
+                                <div class="filter-header">
+                                    <h4 class="filter-title">Filter Options </h4>
+                                </div>
+                                <form action="" method="get" class="filter-body flex-1">
+                                    <div class="filter-field">
+                                        <div>
+                                            <label class="def-label" for="">Start date</label>
+                                            <input class="def-date-input" type="date">
+                                        </div>
+                                        <div>
+                                            <label class="def-label" for="">End date</label>
+                                            <input class="def-date-input" type="date">
+                                        </div>
+                                        <div>
+                                            <label class="def-label" for="">status</label>
+                                            <div></div>
+                                        </div>
+                                        <div class="custom-checkbox">
+                                            <input type="checkbox" id="checkbox1" />
+                                            <label for="checkbox1">Active</label>
+                                        </div>
+                                        <div class="custom-checkbox">
+                                            <input type="checkbox" id="checkbox2" />
+                                            <label for="checkbox2">Inactive</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="filter-footer d-flex gap-2">
+                                        <div>
+                                            <button class="btn-cancel w-100">Reset</button>
+                                        </div>
+                                        <div>
+                                            <button class="btn-2 w-100">Filter</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="def-table">
                     <table>
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Order date</th>
-                                <th>Order name</th>
-                                <th>Value</th>
-                                <th>Status</th>
-                                <th class="text-end">Action</th>
+                                <th class="sort-asc">
+                                    <a href="">ID</a>
+                                </th>
+                                <th>
+                                    <a href="">Order date</a>
+                                </th>
+                                <th><a href="">Order name</a></th>
+                                <th><a href="">Value</a></th>
+                                <th><a href="">Status</a></th>
+                                <th class="text-end no-sort">Action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -489,7 +638,7 @@
 
                 <nav aria-label="Page navigation" class="pagination-wrapper">
                     <div class="showing font-16">
-                        Showing 1 - 10  out of 100
+                        Showing 1 - 10 out of 100
                     </div>
                     <ul class="pagination">
                         <li class="page-item">
@@ -523,6 +672,10 @@
     <script src="./public/js/sidebar.js"></script>
     <script src="./public/js/theme-switch.js"></script>
     <script src="./public/js/header.js"></script>
+    <script src="./public/js/menu-drop-down.js"></script>
+    <script src="./public/js/select-drop-down.js"></script>
+
+
 </body>
 
 </html>

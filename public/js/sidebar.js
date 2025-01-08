@@ -42,11 +42,15 @@
                 e.target !== sidebarCollapseButton &&
                 !e.target.closest("#collapse-sidebar")
             ) {
-                collapseSidebarId?.classList.add("-translate-x-full");
-                collapseSidebarId?.classList.remove("translate-x-0");
+                // collapseSidebarId?.classList.add("-translate-x-full");
+                // collapseSidebarId?.classList.remove("translate-x-0");
+                collapseSidebarId.style.transform = "translateX(-100%)";
 
-                shadowLayer?.classList.add("-translate-x-full");
-                shadowLayer?.classList.remove("translate-x-0");
+
+                // shadowLayer?.classList.add("-translate-x-full");
+                // shadowLayer?.classList.remove("translate-x-0");
+                shadowLayer.style.transform = "translateX(-100%)";
+                
             }
         }
 
@@ -74,34 +78,52 @@
 
     sidebarCollapseButton?.addEventListener("click", () => {
         if (ipadView.matches) {
-            if (collapseSidebarId?.classList.contains("-translate-x-full")) {
+            if (collapseSidebarId.style.transform == "translateX(-100%)") {
 
-                collapseSidebarId?.classList.remove("-translate-x-full");
-                collapseSidebarId?.classList.add("translate-x-0");
+                // collapseSidebarId?.classList.remove("-translate-x-full");
+                // collapseSidebarId?.classList.add("translate-x-0");
 
-                shadowLayer?.classList.remove("-translate-x-full");
-                shadowLayer?.classList.add("translate-x-0");
+                collapseSidebarId.style.transform = null;
+
+
+                // shadowLayer?.classList.remove("-translate-x-full");
+                // shadowLayer?.classList.add("translate-x-0");
+
+                shadowLayer.style.transform = null;
+
             } else {
-                collapseSidebarId?.classList.add("-translate-x-full");
-                collapseSidebarId?.classList.remove("translate-x-0");
+                // collapseSidebarId?.classList.add("-translate-x-full");
+                // collapseSidebarId?.classList.remove("translate-x-0");
 
-                shadowLayer?.classList.add("-translate-x-full");
-                shadowLayer?.classList.remove("translate-x-0");
+                collapseSidebarId.style.transform = "translateX(-100%)";
+
+                // shadowLayer?.classList.add("-translate-x-full");
+                // shadowLayer?.classList.remove("translate-x-0");
+
+                shadowLayer.style.transform = "translateX(-100%)";
+
             }
         }
     });
 
     function menuResponse() {
         if (ipadView.matches) {
-            collapseSidebarId?.classList.add("absolute");
-            collapseSidebarId?.classList.add("-translate-x-full");
-            shadowLayer?.classList.add("absolute");
-            shadowLayer?.classList.add("-translate-x-full");
+            collapseSidebarId?.classList.add("position-absolute");
+            // collapseSidebarId?.classList.add("-translate-x-full");
+            collapseSidebarId.style.transform = "translateX(-100%)";
+            shadowLayer?.classList.add("position-absolute");
+            // shadowLayer?.classList.add("-translate-x-full");
+            shadowLayer.style.transform = "translateX(-100%)";
+
         } else {
-            collapseSidebarId?.classList.remove("absolute");
-            collapseSidebarId?.classList.remove("-translate-x-full");
-            shadowLayer?.classList.remove("absolute");
-            shadowLayer?.classList.remove("-translate-x-full");
+            collapseSidebarId?.classList.remove("position-absolute");
+            // collapseSidebarId?.classList.remove("-translate-x-full");
+            collapseSidebarId.style.transform = null;
+            
+            shadowLayer?.classList.remove("position-absolute");
+            // shadowLayer?.classList.remove("-translate-x-full");
+            shadowLayer.style.transform = null;
+
         }
     }
 

@@ -10,11 +10,12 @@ $pagination-active-text-color: #fff;
 .def-table {
   overflow-x: scroll;
   min-height: calc(100vh - 390px);
-
+  margin-top: 8px;
   table {
     border-collapse: separate;
     border-spacing: 0px 8px;
     width: 100%;
+
     thead {
       color: variable.$dark_1;
       tr {
@@ -26,11 +27,55 @@ $pagination-active-text-color: #fff;
           @include font-14;
           padding-top: 10px;
           font-weight: 500;
-          padding-left: 16px;
+          padding-left: 14px;
           padding-right: 16px;
+          position: relative;
+          cursor: pointer;
+          &:not(.no-sort) {
+            &::before,
+            &::after {
+              content: "\2193";
+              position: absolute;
+              border-width: 5px;
+              transition: transform 0.3s, opacity 0.3s;
+              top: 12px;
+            }
+
+            &::before {
+              content: "\2191";
+              opacity: 0.5;
+              right: 8px;
+            }
+
+            &::after {
+              opacity: 0.5;
+              right: 0px;
+            }
+
+            &.sort-asc {
+              &::before {
+                opacity: 1;
+              }
+              &::after {
+                opacity: 0.3;
+              }
+            }
+
+            &.sort-desc {
+              &::after {
+                opacity: 1;
+              }
+              &::before {
+                opacity: 0.3;
+              }
+            }
+          }
 
           @media (min-width: 1536px) {
             padding-top: 12px;
+          }
+          a {
+            color: variable.$dark_1;
           }
         }
       }
@@ -45,10 +90,10 @@ $pagination-active-text-color: #fff;
           background: variable.$optm-gray-300;
           padding: 6px;
           padding-left: 14px;
-
-
+          
           @media (min-width: 1536px) {
             padding: 7px;
+            padding-left: 14px;
           }
           &:first-child {
             padding-left: 14px;
@@ -87,7 +132,7 @@ $pagination-active-text-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .showing{
+  .showing {
     color: rgba(variable.$dark_2, 0.8);
   }
   .pagination {

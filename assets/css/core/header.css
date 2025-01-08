@@ -1,9 +1,9 @@
 /* Error: Undefined mixin.
  *    ,
- * 26 |   @include font-16;
+ * 27 |   @include font-16;
  *    |   ^^^^^^^^^^^^^^^^
  *    '
- *   scss/core/component.scss 26:3  @import
+ *   scss/core/component.scss 27:3  @import
  *   scss/core/header.scss 2:9      root stylesheet */
 
 body::before {
@@ -14,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 26 \2502    @include font-16;\a    \2502    ^^^^^^^^^^^^^^^^\a    \2575 \a   scss/core/component.scss 26:3  @import\a   scss/core/header.scss 2:9      root stylesheet";
+  content: "Error: Undefined mixin.\a    \2577 \a 27 \2502    @include font-16;\a    \2502    ^^^^^^^^^^^^^^^^\a    \2575 \a   scss/core/component.scss 27:3  @import\a   scss/core/header.scss 2:9      root stylesheet";
 }

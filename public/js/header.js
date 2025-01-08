@@ -1,31 +1,5 @@
 {
-    let hoverDropdownBox = document.querySelectorAll(".hover-dropdown-box");
-
-    let hoverDropdownShowBox = document.querySelectorAll(
-        ".dropdown-show-box"
-    );
-
-    let headerPrevDropDown = undefined;
-    let prevHeader = undefined;
-
-    hoverDropdownBox?.forEach(function (el, ind) {
-        el?.addEventListener("click", function () {
-            headerPrevDropDown?.classList.add("d-none");
-            prevHeader?.classList.remove("active");
-
-            if (headerPrevDropDown != hoverDropdownShowBox[ind]) {
-                hoverDropdownShowBox[ind]?.classList.remove("d-none");
-                el.classList.add("active");
-
-                prevHeader = el;
-
-                headerPrevDropDown = hoverDropdownShowBox[ind];
-            } else {
-                headerPrevDropDown = undefined;
-            }
-        });
-    });
-
+   
     let langs = document.querySelectorAll(".language");
     let angleStyleDiv = document.querySelector(".angle-down");
     let langName = document.querySelector(".langName");
@@ -89,20 +63,6 @@
     langs[0]?.addEventListener("mouseleave", () => {
         if (isNotFirst) {
             angleStyleDiv?.classList.remove("lang-hover-style");
-        }
-    });
-
-    window.addEventListener("click", function (e) {
-        if (
-            !e.target.classList.contains("hover-dropdown-box") &&
-            !e.target.closest(".dropdown-show-box")
-        ) {
-            for (let i = 0; i < hoverDropdownBox.length; i++) {
-                hoverDropdownShowBox[i]?.classList.add("d-none");
-                hoverDropdownBox[i]?.classList.remove("active");
-                headerPrevDropDown = undefined;
-                prevHeader = undefined;
-            }
         }
     });
 

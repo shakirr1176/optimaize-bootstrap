@@ -34,7 +34,7 @@ body {
     padding: 0;
     margin: 0;
   }
-  main{
+  main {
     padding: 24px;
     padding-top: 0;
   }
@@ -51,4 +51,7 @@ body.dark {
 @import "./core/sidebar.scss";
 @import "./core/dashboard.scss";
 @import "./core/table.scss";
+@import "./core/custom-dropdown.scss";
+@import "./core/filter.scss";
+@import "./core/breadcrumb.scss";
 @import "./core/dark";

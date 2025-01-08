@@ -1,0 +1,14 @@
+@use "variable.scss";
+
+#breadcrumb {
+  width: 100%;
+  margin-bottom: 16px;
+  @media (min-screen: 1536px) {
+    margin-bottom: 24px;
+  }
+  h3 {
+    @include font-34;
+    color: variable.$dark_2;
+    font-weight: bold;
+  }
+}

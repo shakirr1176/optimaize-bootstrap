@@ -1,0 +1,67 @@
+@use "variable";
+
+.custom-select {
+  position: relative;
+  select {
+    display: none;
+  }
+
+  .select-selected {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .select-selected {
+    @include font-14;
+    background: variable.$optm-gray-300;
+    border-radius: variable.$custom-radius;
+    min-height: variable.$field-height;
+    color: variable.$dark_2;
+    padding: 0 10px;
+    padding-right: 28px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+  }
+
+  .select-items {
+    z-index: 40;
+    width: calc(100% + 2px);
+    border-radius: variable.$custom-radius;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 0;
+
+    margin-top: 4px;
+
+    li {
+      @include dropdown-list-color;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+
+  &.left {
+    .select-items {
+      left: 0;
+      right: auto;
+    }
+  }
+
+  .select-hide {
+    display: none;
+  }
+
+  .drop-down-icon {
+    width: 14px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    pointer-events: none;
+  }
+}

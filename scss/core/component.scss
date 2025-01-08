@@ -1,13 +1,13 @@
 @use "variable.scss";
 
 @mixin optm-radius {
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 @mixin field-padding {
   padding: 12px 16px;
   @media (min-width: 1536px) {
-    padding: 14px 20px;
+    padding: 10px 20px;
   }
 }
 
@@ -16,16 +16,131 @@
   color: variable.$dark_2;
   background-color: variable.$optm-gray-300;
   width: 100%;
+  min-height: variable.$field-height;
   outline: none;
   &::placeholder {
     color: #6b7280;
   }
 }
 
+.def-label {
+  @include font-16;
+  color: rgba(variable.$dark_2, 0.8);
+  display: block;
+  text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
 .def-input {
   @include font-16;
-  @include field-padding;
   @include field;
+  @include field-padding;
+}
+
+.def-date-input {
+  @include font-16;
+  @include field;
+  @include field-padding;
+}
+
+@mixin def-btn {
+  @include font-14;
+  @include field-padding;
+  border-radius: variable.$custom-radius;
+  transition: all 300ms;
+}
+
+.btn-1 {
+  @include def-btn;
+  background: rgba(variable.$primary, 0.1);
+  &:hover {
+    background: rgba(variable.$primary, 0.2);
+  }
+}
+.btn-2 {
+  @include def-btn;
+  background: variable.$primary;
+  color: white;
+  &:hover {
+    background: variable.$primary-deep;
+  }
+}
+
+.btn-cancel {
+  @include def-btn;
+  background: rgba(variable.$danger, 0.5);
+  &:hover {
+    background: rgba(variable.$danger, 0.6);
+  }
+}
+
+@mixin def-logo-btn {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+
+  svg {
+    color: white;
+    width: 16px;
+  }
+}
+
+.def-logo-btn-1 {
+  @include def-logo-btn;
+  background: variable.$primary;
+}
+
+.search-wrapper {
+  position: relative;
+  .search-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    .search-icon {
+      width: 16px;
+
+      @media (min-width: 1536px) {
+        width: 18px;
+      }
+    }
+  }
+
+  .cancel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    opacity: 0;
+    pointer-events: none;
+    .cancel-icon {
+      width: 16px;
+      @media (min-width: 1536px) {
+        width: 18px;
+      }
+    }
+  }
+
+  input {
+    @include font-16;
+    @include field;
+    // @include field-padding;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    @media (min-width: 1536px) {
+      padding-right: 32px;
+      padding-left: 40px;
+    }
+
+    &:not(:placeholder-shown) + .cancel-btn {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
 }
 
 @mixin def-btn {
@@ -45,10 +160,58 @@
   }
 }
 
-.dropdown-list-color,
-.select-items div {
+.dropdown-list-color {
   @include font-14;
+  cursor: pointer;
+  padding: 8px;
 
+  color: variable.$dark_2;
+  background-color: white;
+  display: block;
+  &:hover {
+    color: variable.$lara-primary;
+    background-color: variable.$gray-100;
+  }
+
+  &.active {
+    color: variable.$lara-primary;
+    background-color: variable.$gray-100;
+  }
+}
+
+.menu-drop-down-field {
+  @include font-14;
+  @include optm-radius;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  padding-right: 28px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: variable.$dark_2;
+  background-color: variable.$optm-gray-300;
+  width: 100%;
+  min-height: variable.$field-height;
+  outline: none;
+  &::placeholder {
+    color: #6b7280;
+  }
+}
+
+.drop-down-icon {
+  width: 14px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  pointer-events: none;
+}
+
+@mixin dropdown-list-color {
+  @include font-14;
+  cursor: pointer;
   padding: 12px 16px;
 
   @media (min-width: 1536px) {
@@ -111,6 +274,7 @@
   right: 0px;
   z-index: 1000;
   margin-top: 8px;
+  min-width: 50px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -162,12 +326,14 @@
     background-color: variable.$primary-deep;
   }
 
-  & svg, & img, & i {
+  & svg,
+  & img,
+  & i {
     width: 16px;
     height: 16px;
   }
 
-  &.danger{
+  &.danger {
     background-color: variable.$danger;
   }
 }
@@ -216,3 +382,57 @@
   }
 }
 
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    // padding-right: 10px;
+    border: 2px solid #a249ff;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 3px;
+      width: 10px;
+      height: 5px;
+      border: solid #fff;
+      border-width: 0 2px 2px 0;
+      transform: scaleY(-1) rotate(227deg);
+      transition: transform 0.2s ease-in-out;
+      opacity: 0;
+    }
+
+    &:checked {
+      background-color: #a249ff;
+      border-color: #835feb;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(162, 73, 255, 0.3);
+    }
+  }
+
+  label {
+    @include font-16;
+    color: #24292e;
+    cursor: pointer;
+    padding-left: 12px;
+  }
+}
