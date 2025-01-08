@@ -1,5 +1,4 @@
-@use "./variable";
-
+@use "variable";
 .dark {
   header {
     .dark-light {
@@ -8,7 +7,7 @@
       }
       .dark-icon {
         display: block;
-        color: $branco-sujo;
+        color: variable.$branco-sujo;
       }
     }
   }
@@ -22,17 +21,17 @@
   }
 
   #particles-background {
-    background-color: $dark_2;
+    background-color: variable.$dark_2;
   }
 
   .tabButton {
     &:not(.active) {
-      color: $branco-sujo;
+      color: variable.$branco-sujo;
     }
   }
 
   #calendar {
-    color: $branco-sujo;
+    color: variable.$branco-sujo;
   }
 
   .fc-col-header-cell,
@@ -43,6 +42,6 @@
   }
 
   .fc-button-primary {
-    background-color: $optm-gray-300;
+    background-color: variable.$optm-gray-300;
   }
 }

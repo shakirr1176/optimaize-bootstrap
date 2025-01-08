@@ -1,42 +1,54 @@
 @use "custom" as bootstrap;
-@import "./variable.scss";
-
-@import "./dark";
-@import "./font.scss";
-@import "./component.scss";
-@import "./header.scss";
-@import "./auth.scss";
-@import "./sidebar.scss";
+@use "core/variable.scss";
 
 body {
-  background: $optm-gray-200;
+  background: variable.$optm-gray-200;
+
+  button,
+  input {
+    outline: none;
+    border: none;
+    background: transparent;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: variable.$primary;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  main{
+    padding: 24px;
+    padding-top: 0;
+  }
 }
 
 body.dark {
-  background: $dark-optm-gray-200;
+  background: variable.$dark-optm-gray-200;
 }
 
-button, input{
-  outline: none;
-  border: none;
-  background: transparent;
-}
-
-p{
-  margin: 0;
-}
-
-h1,h2,h3,h4,h5,h6{
-  margin: 0;
-}
-
-a{
-  text-decoration: none;
-  color: $optm-purple;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+@import "./core/font.scss";
+@import "./core/component.scss";
+@import "./core/header.scss";
+@import "./core/auth.scss";
+@import "./core/sidebar.scss";
+@import "./core/dashboard.scss";
+@import "./core/table.scss";
+@import "./core/dark";

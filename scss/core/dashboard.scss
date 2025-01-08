@@ -1,0 +1,83 @@
+@use "variable.scss";
+
+h1 {
+  span {
+    color: variable.$primary;
+  }
+}
+
+.card-wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  color: variable.$dark_1;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  margin-bottom: 16px;
+
+  @media (min-width: 1536px) {
+    margin-bottom: 24px;
+  }
+
+  $bg-light: variable.$optm-gray-300;
+  $border-radius: 1rem;
+  $gap: 1rem;
+
+  .custom-card {
+    display: flex;
+    align-items: center;
+    gap: $gap;
+    background-color: $bg-light;
+    border-radius: $border-radius;
+    padding: 16px;
+
+    @media (min-width: 1280px) {
+      padding: 24pxrem;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      background: rgba($bg-light, 0.1);
+      * {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.see-all {
+  @include font-16;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: variable.$optm-gray-300;
+  border-radius: variable.$custom-radius;
+  padding: 12px 16px;
+  
+  @media (min-width: 1536px) {
+      padding: 16px 24px;
+  }
+
+  h4 {
+    font-weight: 500;
+    color: variable.$dark_1;
+  }
+  a {
+    color: variable.$primary;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

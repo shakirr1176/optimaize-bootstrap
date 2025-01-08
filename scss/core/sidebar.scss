@@ -1,3 +1,5 @@
+@use "variable.scss";
+
 $sidebar-bg-light: #f8f9fa;
 $sidebar-bg-dark: #151839;
 
@@ -90,7 +92,7 @@ body {
     padding: 10px 24px;
     text-transform: capitalize;
     transition: 0.2s;
-    color: $dark_2;
+    color: variable.$dark_2;
     white-space: nowrap;
     .menu-arrow {
       transition: all $sidebar-transition;
@@ -281,7 +283,6 @@ body {
 
   .header-line {
     background-color: $light-gray;
-    background-color: $dark-purple;
 
     &.collapse-sidebar {
       display: none;

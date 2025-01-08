@@ -1,10 +1,10 @@
-@use "custom" as bootstrap;
-@import "./variable.scss";
+// @use "custom" as bootstrap;
+// @import "./variable.scss";
 
-@import "./dark";
-@import "./font.scss";
-@import "./component.scss";
-@import "./header.scss";
+// @import "./dark";
+// @import "./font.scss";
+// @import "./component.scss";
+// @import "./header.scss";
 
 body {
   background: $optm-gray-200;
@@ -55,20 +55,20 @@ ul {
   font-weight: 500;
   text-transform: capitalize;
   border-radius: 8px;
-  background-color: rgba($optm-purple, 0.1);
+  background-color: rgba($primary, 0.1);
   color: $dark_2;
   &:hover {
-    background-color: rgba($optm-purple, 0.2);
+    background-color: rgba($primary, 0.2);
   }
 }
 
 // Secondary Button
 .lara-secondary-btn {
   @extend .lara-btn;
-  background-color: $optm-purple;
+  background-color: $primary;
   color: white;
   &:hover {
-    background-color: darken($optm-purple, 10%);
+    background-color: darken($primary, 10%);
   }
 }
 
@@ -77,7 +77,7 @@ ul {
   transition: all 0.3s ease;
   text-transform: capitalize;
   border-radius: 50%;
-  background-color: $optm-purple;
+  background-color: $primary;
   color: white;
   width: 40px;
   height: 40px;
@@ -85,7 +85,7 @@ ul {
   justify-content: center;
   align-items: center;
   &:hover {
-    background-color: $optm-deep-purple;
+    background-color: $primary-deep;
   }
 
   @media (min-width: 1536px) {
@@ -101,12 +101,12 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $optm-purple;
+  background-color: $primary;
   color: white;
   border-radius: 50%;
   transition: all 0.3s ease;
   &:hover {
-    background-color: $optm-deep-purple;
+    background-color: $primary-deep;
   }
 }
 
@@ -127,10 +127,10 @@ ul {
 // Submit Button
 .lara-submit-btn {
   @extend .lara-btn;
-  background-color: rgba($optm-purple, 0.1);
+  background-color: rgba($primary, 0.1);
   font-weight: 600;
   &:hover {
-    background-color: rgba($optm-purple, 0.2);
+    background-color: rgba($primary, 0.2);
   }
 }
 

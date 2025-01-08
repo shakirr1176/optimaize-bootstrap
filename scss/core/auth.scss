@@ -1,3 +1,5 @@
+@use "variable.scss";
+
 .auth-container {
   padding-left: 24px;
   padding-right: 24px;
@@ -25,7 +27,7 @@
     .auth-form {
       position: relative;
       max-width: 100%;
-      background-color: $optm-gray-300;
+      background-color: variable.$optm-gray-300;
       padding-left: 24px;
       padding-right: 24px;
       padding-top: 24px;
@@ -93,12 +95,12 @@
         @include font-24;
         text-align: center;
         font-weight: 500;
-        color: $dark_2;
+        color: variable.$dark_2;
       }
       .title-style {
         width: 2.5rem;
         height: 0.25rem;
-        background-color: $optm-purple;
+        background-color: variable.$primary;
         margin-left: auto;
         margin-right: auto;
         margin-top: 0.5rem;
@@ -108,7 +110,7 @@
         width: 20px;
         height: 20px;
         margin-right: 10px;
-        color: $dark_2;
+        color: variable.$dark_2;
       }
 
       input {

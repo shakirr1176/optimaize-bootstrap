@@ -1,0 +1,33 @@
+.dark header .dark-light .light-icon {
+  display: none;
+}
+.dark header .dark-light .dark-icon {
+  display: block;
+  color: #c3c3c3;
+}
+.dark .loader-line {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.dark .loader-circle {
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.dark #particles-background {
+  background-color: #10122b;
+}
+.dark .tabButton:not(.active) {
+  color: #c3c3c3;
+}
+.dark #calendar {
+  color: #c3c3c3;
+}
+.dark .fc-col-header-cell,
+.dark .fc-theme-standard .fc-scrollgrid,
+.dark .fc-theme-standard td,
+.dark .fc-theme-standard th {
+  border-color: #4b4f54;
+}
+.dark .fc-button-primary {
+  background-color: rgba(74, 63, 110, 0.1019607843);
+}
+
+/*# sourceMappingURL=dark.css.map */
