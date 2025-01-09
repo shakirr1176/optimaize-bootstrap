@@ -6,7 +6,7 @@ $sidebar-bg-dark: #151839;
 $sidebar-expand-width: 300px;
 $sidebar-collapse-width: 104px;
 
-$sidebar-expand-width-lg: 230px;
+$sidebar-expand-width-lg: 250px;
 $sidebar-collapse-width-lg: 96px;
 
 $sidebar-transition: 0.3s ease-out;
@@ -14,6 +14,11 @@ $active-color: #7b48d3;
 $light-gray: #d6d6d6;
 $dark-purple: #3e2a47;
 $items-route-color-light: #d6d6d6;
+$subitem-width: 270px;
+$collapse-logo-size: 36px; 
+$collapse-logo-size-sm: 32px ;
+$menu-icon-size: 22px;
+$menu-icon-size-sm: 18px;
 
 body {
   &.has-expand-sidebar {
@@ -33,7 +38,8 @@ body {
   .sidebar-footer{
     position: sticky;
     bottom: 0;
-    padding: 0 24px;
+    padding-top: 24px;
+    padding-bottom: 30px;
     background-color: $sidebar-bg-light;
   }
 
@@ -84,9 +90,9 @@ body {
 
   .menu-logo-collapse {
     margin: auto;
-    width: 32px;
+    width: $collapse-logo-size-sm;
     @media (min-width: 1536px) {
-      width: 36px;
+      width: $collapse-logo-size;
     }
   }
 
@@ -118,9 +124,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+
     @media (min-width: 1280px) {
-      width: 128px;
+      width: 170px;
     }
+
     @media (min-width: 1536px) {
       width: 192px;
       padding: 0 14px;
@@ -149,12 +157,12 @@ body {
     }
 
     .menu-icon {
-      width: 18px;
-      height: 18px;
+      width: $menu-icon-size-sm;
+      height: $menu-icon-size-sm;
 
       @media (min-width: 1536px) {
-        width: 22px;
-        height: 22px;
+        width: $menu-icon-size;
+        height: $menu-icon-size;
       }
     }
     .shadow-layer {
@@ -268,9 +276,10 @@ body {
       position: absolute;
       left: 100%;
       top: 0px;
-      margin-left: 0px !important;
-      width: 270px;
+      margin-left: 16px !important;
+      width: $subitem-width;
       background: $sidebar-bg-light;
+      box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 5px;
       .drop-down-header {
         justify-content: space-between;
       }

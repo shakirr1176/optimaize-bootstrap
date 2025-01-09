@@ -1,9 +1,9 @@
 /* Error: Undefined mixin.
- *    ,
- * 94 |     @include font-14;
- *    |     ^^^^^^^^^^^^^^^^
- *    '
- *   scss/core/sidebar.scss 94:5  root stylesheet */
+ *     ,
+ * 100 |     @include font-14;
+ *     |     ^^^^^^^^^^^^^^^^
+ *     '
+ *   scss/core/sidebar.scss 100:5  root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -13,5 +13,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined mixin.\a    \2577 \a 94 \2502      @include font-14;\a    \2502      ^^^^^^^^^^^^^^^^\a    \2575 \a   scss/core/sidebar.scss 94:5  root stylesheet";
+  content: "Error: Undefined mixin.\a     \2577 \a 100 \2502      @include font-14;\a     \2502      ^^^^^^^^^^^^^^^^\a     \2575 \a   scss/core/sidebar.scss 100:5  root stylesheet";
 }

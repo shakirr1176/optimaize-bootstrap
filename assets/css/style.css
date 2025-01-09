@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
 /*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
@@ -11852,6 +11853,7 @@ textarea.form-control-lg {
 
 body {
   background: #f2f2f2;
+  font-family: "Epilogue", serif;
 }
 body button,
 body input {
@@ -12548,6 +12550,18 @@ body.dark {
   overflow-y: scroll;
 }
 
+.fade-in {
+  animation: fade-in 500ms ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .def-label {
   font-size: 11px;
   color: rgba(16, 18, 43, 0.8);
@@ -13087,6 +13101,18 @@ body.dark {
   overflow-y: scroll;
 }
 
+.fade-in {
+  animation: fade-in 500ms ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 header {
   position: sticky;
   top: 0;
@@ -13401,7 +13427,8 @@ body.has-expand-sidebar {
 #collapse-sidebar .sidebar-footer {
   position: sticky;
   bottom: 0;
-  padding: 0 24px;
+  padding-top: 24px;
+  padding-bottom: 30px;
   background-color: #f8f9fa;
 }
 #collapse-sidebar .drop-down-item {
@@ -13495,7 +13522,7 @@ body.has-expand-sidebar {
 }
 @media (min-width: 1280px) {
   #collapse-sidebar .menu-title {
-    width: 128px;
+    width: 170px;
   }
 }
 @media (min-width: 1536px) {
@@ -13505,7 +13532,7 @@ body.has-expand-sidebar {
   }
 }
 #collapse-sidebar.expand-sidebar {
-  width: 230px;
+  width: 250px;
   height: 100vh;
   overflow-y: scroll;
 }
@@ -13534,7 +13561,7 @@ body.has-expand-sidebar {
   }
 }
 #collapse-sidebar.expand-sidebar .shadow-layer {
-  width: 230px;
+  width: 250px;
 }
 @media (min-width: 1536px) {
   #collapse-sidebar.expand-sidebar .shadow-layer {
@@ -13635,9 +13662,10 @@ body.has-expand-sidebar {
   position: absolute;
   left: 100%;
   top: 0px;
-  margin-left: 0px !important;
+  margin-left: 16px !important;
   width: 270px;
   background: #f8f9fa;
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 5px;
 }
 #collapse-sidebar.collapse-sidebar .sub-item .drop-down-header {
   justify-content: space-between;
@@ -14152,11 +14180,17 @@ h1 span {
 }
 .filter-options .filter-body {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 @media (min-width: 1536px) {
   .filter-options .filter-body {
     padding: 24px;
   }
+}
+.filter-options .filter-body .filter-field {
+  flex: 1 1 0%;
 }
 .filter-options .filter-body .filter-field > *:not(:last-child) {
   margin-bottom: 12px;

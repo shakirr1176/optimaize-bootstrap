@@ -1,8 +1,10 @@
 @use "custom" as bootstrap;
 @use "core/variable.scss";
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
   background: variable.$optm-gray-200;
+  font-family: "Epilogue", serif;
 
   button,
   input {

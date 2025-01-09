@@ -41,6 +41,9 @@
   }
   .filter-body {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @media (min-width: 1536px) {
       padding: 24px;
     }
@@ -48,7 +51,7 @@
     .filter-field {
       $space-y-3: 12px;
       $space-y-4: 16px;
-
+      flex: 1 1 0%;
       & > *:not(:last-child) {
         margin-bottom: $space-y-3;
         @media (min-width: 1536px) {
