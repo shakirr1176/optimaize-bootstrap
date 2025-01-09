@@ -28,6 +28,14 @@ body {
   justify-content: space-between;
   background-color: $sidebar-bg-light;
   flex-shrink: 0;
+  z-index: 40;
+
+  .sidebar-footer{
+    position: sticky;
+    bottom: 0;
+    padding: 0 24px;
+    background-color: $sidebar-bg-light;
+  }
 
   .drop-down-item {
     transition: all $sidebar-transition;

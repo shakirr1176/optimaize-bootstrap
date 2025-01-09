@@ -12383,6 +12383,11 @@ body.dark {
   margin-top: 8px;
   min-width: 50px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.dropdown-box {
+  cursor: pointer;
 }
 
 .gradient-circle {
@@ -12536,6 +12541,11 @@ body.dark {
   .custom-checkbox label {
     font-size: 16px;
   }
+}
+
+.main-section-scroll {
+  height: 100vh;
+  overflow-y: scroll;
 }
 
 .def-label {
@@ -12912,6 +12922,11 @@ body.dark {
   margin-top: 8px;
   min-width: 50px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.dropdown-box {
+  cursor: pointer;
 }
 
 .gradient-circle {
@@ -13067,13 +13082,22 @@ body.dark {
   }
 }
 
+.main-section-scroll {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
 header {
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 75px;
   display: flex;
   align-items: center;
   justify-content: end;
   padding: 26px;
+  background: #f2f2f2;
+  z-index: 30;
 }
 header .dark-light .dark-icon {
   display: none;
@@ -13167,11 +13191,22 @@ header .notification-number-wrapper {
 }
 header .profile .dropdown-show-box {
   width: 160px;
-  text-align: center;
 }
-header .profile img {
+header .profile .dropdown-show-box .drop-avatar {
   width: 30px;
   height: 30px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+}
+header .profile .dropdown-show-box .profile-info {
+  border-bottom: 1px solid rgba(128, 128, 128, 0.123);
+}
+header .profile img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 100%;
 }
 header .language .dropdown-show-box {
@@ -13361,6 +13396,13 @@ body.has-expand-sidebar {
   justify-content: space-between;
   background-color: #f8f9fa;
   flex-shrink: 0;
+  z-index: 40;
+}
+#collapse-sidebar .sidebar-footer {
+  position: sticky;
+  bottom: 0;
+  padding: 0 24px;
+  background-color: #f8f9fa;
 }
 #collapse-sidebar .drop-down-item {
   transition: all 0.3s ease-out;
@@ -13770,7 +13812,6 @@ h1 span {
   padding-left: 14px;
   padding-right: 16px;
   position: relative;
-  cursor: pointer;
 }
 @media (min-width: 1200px) {
   .def-table table thead tr th {
@@ -13781,34 +13822,6 @@ h1 span {
   .def-table table thead tr th {
     font-size: 14px;
   }
-}
-.def-table table thead tr th:not(.no-sort)::before, .def-table table thead tr th:not(.no-sort)::after {
-  content: "↓";
-  position: absolute;
-  border-width: 5px;
-  transition: transform 0.3s, opacity 0.3s;
-  top: 12px;
-}
-.def-table table thead tr th:not(.no-sort)::before {
-  content: "↑";
-  opacity: 0.5;
-  right: 8px;
-}
-.def-table table thead tr th:not(.no-sort)::after {
-  opacity: 0.5;
-  right: 0px;
-}
-.def-table table thead tr th:not(.no-sort).sort-asc::before {
-  opacity: 1;
-}
-.def-table table thead tr th:not(.no-sort).sort-asc::after {
-  opacity: 0.3;
-}
-.def-table table thead tr th:not(.no-sort).sort-desc::after {
-  opacity: 1;
-}
-.def-table table thead tr th:not(.no-sort).sort-desc::before {
-  opacity: 0.3;
 }
 @media (min-width: 1536px) {
   .def-table table thead tr th {
@@ -13824,6 +13837,7 @@ h1 span {
 .def-table table tbody tr {
   font-size: 10px;
   text-align: left;
+  height: 44px;
 }
 @media (min-width: 1200px) {
   .def-table table tbody tr {
@@ -13866,11 +13880,68 @@ h1 span {
     margin-right: 6px;
   }
 }
+.def-table table tbody tr td .first-column {
+  display: flex;
+}
+.def-table table tbody tr td .first-column .tableDropBtn {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+@media (min-width: 1536px) {
+  .def-table table tbody tr td .first-column .tableDropBtn {
+    width: 20px;
+    height: 20px;
+  }
+}
+.def-table table tbody tr td .first-column .tableDropBtn .minus,
+.def-table table tbody tr td .first-column .tableDropBtn .plus {
+  width: 100%;
+}
+.def-table table tbody tr td .first-column .tableDropBtn .minus {
+  display: none;
+  color: #ff5454;
+}
+.def-table table tbody tr td .first-column .tableDropBtn .plus {
+  color: #a249ff;
+}
+.def-table table tbody tr td .first-column .tableDropBtn.active .plus {
+  display: none;
+}
+.def-table table tbody tr td .first-column .tableDropBtn.active .minus {
+  display: block;
+}
+.def-table table tbody tr td.child-td {
+  border-radius: 12px;
+  padding: 10px 14px;
+  white-space: normal;
+}
+.def-table table tbody tr td.child-td ul li {
+  display: inline-block;
+  padding: 3px 5px 5px;
+  padding-left: 0;
+}
+.def-table table tbody tr td.child-td ul li label {
+  font-weight: bold;
+}
+.def-table table tbody tr td.child-td ul li .content {
+  padding: 3px 5px 5px;
+}
+.def-table.has-hidden table thead tr th:first-child {
+  padding-left: 30px;
+}
+@media (min-width: 1536px) {
+  .def-table.has-hidden table thead tr th:first-child {
+    padding-left: 36px;
+  }
+}
+.def-table.has-hidden table tbody tr td:first-child:not(.child-td) {
+  padding-left: 8px;
+}
 
 .pagination-wrapper {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin: 20px 0;
 }
 .pagination-wrapper .showing {
   color: rgba(16, 18, 43, 0.8);
@@ -13879,7 +13950,6 @@ h1 span {
   display: flex;
   justify-content: end;
   padding: 0;
-  margin: 20px 0;
   list-style: none;
 }
 .pagination-wrapper .pagination .page-item {
@@ -13914,6 +13984,24 @@ h1 span {
   pointer-events: none;
   opacity: 0.5;
 }
+.pagination-wrapper .showing-options {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 63, 110, 0.1019607843);
+  padding: 3px 8px;
+  padding-right: 28px;
+  border-radius: 5px;
+}
+
+.always-hidden {
+  display: none;
+}
+
+.no-display {
+  display: none;
+}
 
 .custom-select {
   position: relative;
@@ -13939,6 +14027,7 @@ h1 span {
   overflow: hidden;
   text-overflow: ellipsis;
   text-transform: capitalize;
+  white-space: nowrap;
 }
 @media (min-width: 1200px) {
   .custom-select .select-selected {
@@ -13952,7 +14041,7 @@ h1 span {
 }
 .custom-select .select-items {
   z-index: 40;
-  width: calc(100% + 2px);
+  min-width: calc(100% + 2px);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -13969,6 +14058,7 @@ h1 span {
   display: block;
   cursor: pointer;
   user-select: none;
+  white-space: nowrap;
 }
 @media (min-width: 1200px) {
   .custom-select .select-items li {

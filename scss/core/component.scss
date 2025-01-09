@@ -276,6 +276,11 @@
   margin-top: 8px;
   min-width: 50px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.dropdown-box{
+  cursor: pointer;
 }
 
 .gradient-circle {
@@ -435,4 +440,9 @@
     cursor: pointer;
     padding-left: 12px;
   }
+}
+
+.main-section-scroll{
+  height: 100vh;
+  overflow-y: scroll;
 }

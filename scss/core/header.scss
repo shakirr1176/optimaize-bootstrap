@@ -2,12 +2,16 @@
 @import "./component.scss";
 
 header {
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 75px;
   display: flex;
   align-items: center;
   justify-content: end;
   padding: 26px;
+  background: variable.$optm-gray-200;
+  z-index: 30;
 
   .dark-light {
     .dark-icon {
@@ -100,16 +104,28 @@ header {
   .profile {
     .dropdown-show-box {
       width: 160px;
-      text-align: center;
+      .drop-avatar {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100%;
+      }
+      .profile-info{
+        border-bottom: 1px solid rgba(128, 128, 128, 0.123);
+      }
     }
+
     img {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+      object-position: center;
       border-radius: 100%;
     }
   }
-  .language{
-    .dropdown-show-box{
+  .language {
+    .dropdown-show-box {
       text-align: center;
     }
   }

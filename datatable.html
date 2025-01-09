@@ -12,7 +12,7 @@
     <div class="gradient-circle dark:hidden"></div>
     <div class="main-layout d-flex min-vh-100">
         <div id="collapse-sidebar" class="expand-sidebar">
-            <div>
+            <div class="flex-1">
                 <div class="shadow-layer"></div>
                 <div class="icon-wrapper">
                     <a class="w-100" href="http://optimaize.test">
@@ -157,7 +157,7 @@
                     </ul>
                 </div>
             </div>
-            <ul class="position-sticky bottom-end pb-5">
+            <ul class="sidebar-footer">
                 <li class="position-relative">
                     <a href="javascript:;" title="logout" class="drop-down-header">
                         <span class="d-flex align-items-center fw-medium">
@@ -244,26 +244,29 @@
                     </div>
 
                     <div class="profile position-relative">
-                        <div class="icon-btn font-16 dropdown-box">
-                            <div
-                                class="px-3 py-1 text-align-start pe-none d-flex gap-2 justify-content-end align-items-center">
-                                <div>
-                                    <h3 class=" overflow-hidden text-ellipsis font-14 font-medium uppercas">
+                        <div class="font-16 dropdown-box">
+                            <img src="http://optimaize.test/storage/images/users/avatar.jpg" alt="">
+                        </div>
+                        <div class="d-none dropdown-show-box">
+                            <div class="profile-info d-flex p-2 align-items-center gap-2">
+                                <img class="drop-avatar" src="http://optimaize.test/storage/images/users/avatar.jpg"
+                                    alt="">
+                                <div class="text-start">
+                                    <h3 class="text-ellipsis font-14 font-medium uppercas">
                                         Jules
                                     </h3>
-                                    <p class="overflow-hidden text-ellipsis font-12">
+                                    <p class="text-ellipsis font-12">
                                         System-admin
                                     </p>
                                 </div>
-                                <img src="http://optimaize.test/storage/images/users/avatar.jpg" alt="">
                             </div>
+                            <ul>
+                                <li><a class="dropdown-list-color" href="#">Profile</a></li>
+                                <li><a class="dropdown-list-color" href="#">Edit profile</a></li>
+                                <li><a class="dropdown-list-color" href="#">Setting</a></li>
+                                <li><a class="dropdown-list-color" href="#">Logout</a></li>
+                            </ul>
                         </div>
-                        <ul class="d-none dropdown-show-box">
-                            <li><a class="dropdown-list-color" href="#">Profile</a></li>
-                            <li><a class="dropdown-list-color" href="#">Edit profile</a></li>
-                            <li><a class="dropdown-list-color" href="#">Setting</a></li>
-                            <li><a class="dropdown-list-color" href="#">Logout</a></li>
-                        </ul>
                     </div>
                 </div>
             </header>
@@ -274,7 +277,32 @@
                 </div>
 
                 <div class="gap-2 d-flex flex-wrap justify-content-between align-items-center">
-                    <form autocomplete="off" class="filter-form d-flex gap-2" action="" method="">
+                    <form autocomplete="off" class="filter-form d-flex flex-wrap gap-1" action="" method="">
+                        <div class="custom-select left">
+                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <select name="" id="">
+                                <option selected value="">Sort by</option>
+                                <option value="all">ID</option>
+                                <option value="date">Order date</option>
+                                <option value="name">Order Name</option>
+                                <option value="value">Value</option>
+                                <option value="Status">Status</option>
+                            </select>
+                        </div>
+                        <div class="custom-select left">
+                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <select name="" id="">
+                                <option value="">select</option>
+                                <option selected value="ASC">ASC</option>
+                                <option value="DESC">DESC</option>
+                            </select>
+                        </div>
                         <div id="search-by-name" class="custom-select left">
                             <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -286,15 +314,20 @@
                                 <option value="product_name">Product name</option>
                             </select>
                         </div>
-                        <div class="custom-select">
+                        <div class="custom-select text-nowrap">
                             <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                             <select name="" id="">
                                 <option value="">Please select</option>
-                                <option selected value="similar">Similar</option>
-                                <option value="exact">Exact</option>
+                                <option selected value="similar">Similar to</option>
+                                <option value="exact">Exact to</option>
+                                <option value="smaller_than">Smaller than</option>
+                                <option value="less_or_equal_to">Less or equal to</option>
+                                <option value="bigger_than">bigger than</option>
+                                <option value="bigger_or_equal_to">bigger or equal to</option>
+                                <option value="not_equal">not equal</option>
                             </select>
                         </div>
                         <div class="search-wrapper">
@@ -313,26 +346,13 @@
                                 </svg>
                             </button>
                         </div>
-
-                        <div class="position-relative">
-                            <div class="dropdown-box menu-drop-down-field">
-                                10
-                                <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                </svg>
-                            </div>
-                            <ul class="row-show-options dropdown-show-box d-none">
-                                <li class="dropdown-list-color">10</li>
-                                <li class="dropdown-list-color">20</li>
-                                <li class="dropdown-list-color">30</li>
-                            </ul>
-                        </div>
                     </form>
-                    <div class="d-flex gap-2">
+                    <div class="d-flex gap-1">
                         <button class="def-logo-btn-1">
-                            
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
                         </button>
                         <div class="position-relative">
                             <button class="dropdown-box def-logo-btn-1">
@@ -342,7 +362,7 @@
                                         d="M19.5 21a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-5.379a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H4.5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h15Zm-6.75-10.5a.75.75 0 0 0-1.5 0v4.19l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V10.5Z"
                                         clip-rule="evenodd"></path>
                                 </svg>
-                                
+
                             </button>
                             <ul class="text-nowrap dropdown-show-box d-none">
                                 <li>
@@ -409,21 +429,23 @@
                     <table>
                         <thead>
                             <tr>
-                                <th class="sort-asc">
-                                    <a href="">ID</a>
-                                </th>
                                 <th>
-                                    <a href="">Order date</a>
+                                    ID
                                 </th>
-                                <th><a href="">Order name</a></th>
-                                <th><a href="">Value</a></th>
-                                <th><a href="">Status</a></th>
-                                <th class="text-end no-sort">Action</th>
+                                <th class="always-hidden">Description</th>
+                                <th data-serial="4">
+                                    Order date
+                                </th>
+                                <th data-serial="3">Order name</th>
+                                <th data-serial="2">Value</th>
+                                <th data-serial="1">Status</th>
+                                <th class="text-end">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="fw-semibold">#O-00000001 </td>
+                                <td class="fw-semibold">This is description </td>
                                 <td>2025-00-00</td>
                                 <td>Order Name</td>
                                 <td class="fw-semibold">0000,00€</td>
@@ -438,10 +460,6 @@
                                                     d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
                                                     clip-rule="evenodd"></path>
                                             </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Show</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
                                         </a>
                                         <a href="" class="tooltip-container group action-btn danger">
                                             <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -449,16 +467,13 @@
                                                     d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
                                                     fill="#F2F2F2"></path>
                                             </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Delete</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
                                         </a>
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="fw-semibold">#O-00000001 </td>
+                                <td class="fw-semibold">This is description </td>
                                 <td>2025-00-00</td>
                                 <td>Order Name</td>
                                 <td class="fw-semibold">0000,00€</td>
@@ -473,10 +488,6 @@
                                                     d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
                                                     clip-rule="evenodd"></path>
                                             </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Show</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
                                         </a>
                                         <a href="" class="tooltip-container group action-btn danger">
                                             <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -484,150 +495,6 @@
                                                     d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
                                                     fill="#F2F2F2"></path>
                                             </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Delete</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fw-semibold">#O-00000001 </td>
-                                <td>2025-00-00</td>
-                                <td>Order Name</td>
-                                <td class="fw-semibold">0000,00€</td>
-                                <td>Closed</td>
-                                <td>
-                                    <div class="action-wrapper">
-                                        <a href="" class="tooltip-container group action-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
-                                                <path fill-rule="evenodd"
-                                                    d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Show</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                        <a href="" class="tooltip-container group action-btn danger">
-                                            <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
-                                                    fill="#F2F2F2"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Delete</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fw-semibold">#O-00000001 </td>
-                                <td>2025-00-00</td>
-                                <td>Order Name</td>
-                                <td class="fw-semibold">0000,00€</td>
-                                <td>Closed</td>
-                                <td>
-                                    <div class="action-wrapper">
-                                        <a href="" class="tooltip-container group action-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
-                                                <path fill-rule="evenodd"
-                                                    d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Show</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                        <a href="" class="tooltip-container group action-btn danger">
-                                            <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
-                                                    fill="#F2F2F2"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Delete</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fw-semibold">#O-00000001 </td>
-                                <td>2025-00-00</td>
-                                <td>Order Name</td>
-                                <td class="fw-semibold">0000,00€</td>
-                                <td>Closed</td>
-                                <td>
-                                    <div class="action-wrapper">
-                                        <a href="" class="tooltip-container group action-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
-                                                <path fill-rule="evenodd"
-                                                    d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Show</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                        <a href="" class="tooltip-container group action-btn danger">
-                                            <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
-                                                    fill="#F2F2F2"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Delete</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fw-semibold">#O-00000001 </td>
-                                <td>2025-00-00</td>
-                                <td>Order Name</td>
-                                <td class="fw-semibold">0000,00€</td>
-                                <td>Closed</td>
-                                <td>
-                                    <div class="action-wrapper">
-                                        <a href="" class="tooltip-container group action-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path d="M12 15a3 3 0 100-6 3 3 0 000 6z"></path>
-                                                <path fill-rule="evenodd"
-                                                    d="M1.323 11.447C2.811 6.976 7.028 3.75 12.001 3.75c4.97 0 9.185 3.223 10.675 7.69.12.362.12.752 0 1.113-1.487 4.471-5.705 7.697-10.677 7.697-4.97 0-9.186-3.223-10.675-7.69a1.762 1.762 0 010-1.113zM17.25 12a5.25 5.25 0 11-10.5 0 5.25 5.25 0 0110.5 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Show</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
-                                        </a>
-                                        <a href="" class="tooltip-container group action-btn danger">
-                                            <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path
-                                                    d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
-                                                    fill="#F2F2F2"></path>
-                                            </svg>
-                                            <!-- <span class="tooltip">
-                                                <span class="tooltip-content">Delete</span>
-                                                <span class="tooltip-arrow"></span>
-                                            </span> -->
                                         </a>
                                     </div>
                                 </td>
@@ -636,46 +503,67 @@
                     </table>
                 </div>
 
-                <nav aria-label="Page navigation" class="pagination-wrapper">
-                    <div class="showing font-16">
-                        Showing 1 - 10 out of 100
+                <nav aria-label="Page navigation" class="row pagination-wrapper">
+                    <div class="col-12 col-md-6">
+                        <div class="showing font-16 justify-content-center justify-content-md-start flex-wrap d-flex align-items-center gap-2">
+                            <span>
+                                Showing 1 - 10 out of 100
+                            </span>
+                            <div class="position-relative">
+                                <div class="showing-options dropdown-box">
+                                    10
+                                    <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </div>
+                                <ul class="row-show-options dropdown-show-box d-none">
+                                    <li class="dropdown-list-color">10</li>
+                                    <li class="dropdown-list-color">20</li>
+                                    <li class="dropdown-list-color">30</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active">
-                            <a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">4</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                    <div class="col-12 col-md-6 mt-3 mt-md-0">
+                        <ul class="pagination justify-content-center justify-content-md-end">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link" href="#">1</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">3</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">4</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
 
             </main>
         </div>
     </div>
+    <script src="./public/js/helper.js"></script>
     <script src="./public/js/sidebar.js"></script>
     <script src="./public/js/theme-switch.js"></script>
     <script src="./public/js/header.js"></script>
     <script src="./public/js/menu-drop-down.js"></script>
     <script src="./public/js/select-drop-down.js"></script>
-
-
+    <script src="./public/js/datatable.js"></script>
 </body>
 
 </html>

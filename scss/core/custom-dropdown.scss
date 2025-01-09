@@ -25,23 +25,24 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: capitalize;
+    white-space: nowrap;
   }
 
   .select-items {
     z-index: 40;
-    width: calc(100% + 2px);
+    min-width: calc(100% + 2px);
     border-radius: variable.$custom-radius;
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     position: absolute;
     right: 0;
-
     margin-top: 4px;
 
     li {
       @include dropdown-list-color;
       cursor: pointer;
       user-select: none;
+      white-space: nowrap;
     }
   }
 
