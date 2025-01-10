@@ -299,10 +299,10 @@
                 } else {
                     link = $this.getAttribute("data-href");
                 }
-                let dataToken = document.querySelector(
+                let metaName = document.querySelector(
                     'meta[name="csrf-token"]'
-                ).content;
-
+                );
+                let dataToken = metaName ? metaName.content : null;
                 method = method.toUpperCase();
                 if (
                     method === "POST" ||
@@ -316,7 +316,7 @@
                     form.setAttribute("action", link);
                     form.classList.add("hidden");
                     form.innerHTML = `
-                    <input type="hidden" name="_token" value="${dataToken}">
+                    <input type="hidden" name="_token" value="${dataToken ? dataToken : ""}">
                     <input type="hidden" name="_method" value="${method}">
                 `;
                     document.getElementsByTagName("body")[0].prepend(form);
@@ -391,40 +391,4 @@
     /* -------------------------------------------
 ::::::: End Flash Box :::::::
 ------------------------------------------- */
-
-    /* -------------------------------------------
-::::::: Alert Box :::::::
-------------------------------------------- */
-
-    let componentPage = document.querySelector(".component-page");
-
-    if (componentPage == null) {
-        let alertBoxButtons = document.querySelectorAll(".alert-close-btn");
-        let alertBoxs = document.querySelectorAll(".alert-box");
-        alertBoxs?.forEach(function (el) {
-            setTimeout(function () {
-                removeAlertBox(el);
-            }, 5000);
-        });
-        alertBoxButtons?.forEach(function (el) {
-            el.addEventListener("click", function (e) {
-                if(e.target.closest(".alert-box")){
-                    removeAlertBox(e.target.closest(".alert-box"));
-                }
-            });
-        });
-
-        function removeAlertBox(alertBoxs) {
-            requestAnimationFrame(() => {
-                alertBoxs.style.height =
-                    alertBoxs.clientHeight + "px";
-                requestAnimationFrame(() => {
-                    alertBoxs.style.height = "0px";
-                });
-            });
-            setTimeout(function () {
-                alertBoxs.remove();
-            }, 500);
-        }
-    }
 }

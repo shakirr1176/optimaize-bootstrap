@@ -1,0 +1,227 @@
+@use "variable.scss";
+
+$overlay-color: rgba(0, 0, 0, 0.5);
+$modal-bg-color: variable.$optm-gray-100;
+$modal-content-bg: transparent;
+$modal-border: #59657533;
+$modal-text-color: #fff;
+$btn-size: 24px;
+
+.def-modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  background-color: $overlay-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding: 32px 16px;
+
+  .modal-loading {
+    @include font-16;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: variable.$dark_1;
+  }
+
+  &.loading {
+    .modal-content {
+      display: none;
+    }
+    .modal-loading {
+      display: flex;
+    }
+  }
+
+  &:has(.def-modal.active) {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .def-modal-header {
+    position: relative;
+    padding: 24px 16px;
+
+    // Close Button
+    button[data-role="cancel"] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translate(20%, -30%);
+      width: $btn-size;
+      height: $btn-size;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      border: 2px solid white;
+      background-color: variable.$danger;
+    }
+  }
+  // Modal Content
+  .def-modal {
+    position: relative;
+    background-color: $modal-bg-color;
+    color: $modal-text-color;
+    border-radius: variable.$custom-radius;
+    display: none;
+
+    width: 100%;
+
+    @media (min-width: 640px) {
+      width: 58%;
+    }
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1280px) {
+      width: 41%;
+    }
+
+    .def-modal-body {
+      padding: 16px;
+      padding-top: 0;
+    }
+
+    &.active {
+      display: block;
+    }
+
+    h2 {
+      @include font-20;
+      color: variable.$dark_2;
+    }
+
+    p {
+      padding: 1rem;
+    }
+
+    .def-modal-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 16px;
+      margin-top: 16px;
+      border-top: 2px solid $modal-border;
+
+      button {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 150px;
+        gap: 8px;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .modal {
+      width: 90%;
+    }
+  }
+}
+
+// popup
+.lf-modal-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 99;
+
+  .transition-opacity {
+    inset: 0;
+    position: fixed;
+    background-color: $overlay-color;
+  }
+  .lf-modal-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 32px 16px;
+    text-align: center;
+    .lf-modal-content {
+      width: 400px;
+      background-color: variable.$optm-gray-200;
+      display: inline-block;
+      border-radius: variable.$custom-radius;
+      overflow: hidden;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      transform: translateY(0);
+      transition: all 0.3s ease;
+      .lf-icon {
+        border: 4px solid variable.$dark_1;
+        border-radius: 50%;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: variable.$dark_1;
+        width: 50px;
+        height: 50px;
+        font-weight: 700;
+      }
+      .lf-message {
+        @include font-16;
+        font-weight: 700;
+      }
+      .lf-close {
+        @include font-18;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: 12px;
+        margin-top: 12px;
+        font-size: 18px;
+        color: variable.$dark_1;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          color: black;
+        }
+      }
+      .lf-button {
+        display: flex;
+        justify-content: center;
+        padding: 8px 16px;
+        text-align: center;
+        gap:8px;
+        button{
+          color: white !important;
+          font-weight: 700;
+          margin: 0;
+          display: inline-block;
+          padding: 8px 16px;
+          border-radius: 5px;
+          &.flash-close-button {
+            @include font-16;
+            background: gray !important;
+          }
+          &.lf-confirm {
+            @include font-16;
+            background: variable.$danger !important;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}

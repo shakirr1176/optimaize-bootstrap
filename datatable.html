@@ -278,30 +278,7 @@
 
                 <div class="gap-2 d-flex flex-wrap justify-content-between align-items-center">
                     <form autocomplete="off" class="filter-form d-flex flex-wrap gap-2" action="" method="">
-                        <div class="custom-select left">
-                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                            <select name="" id="">
-                                <option value="">Sort by</option>
-                                <option value="all">ID</option>
-                                <option value="date">Order date</option>
-                                <option value="name">Order Name</option>
-                                <option value="value">Value</option>
-                                <option value="Status">Status</option>
-                            </select>
-                        </div>
-                        <div class="custom-select left">
-                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                            <select name="" id="">
-                                <option selected value="ASC">ASC</option>
-                                <option value="DESC">DESC</option>
-                            </select>
-                        </div>
+
                         <div id="search-by-name" class="custom-select left">
                             <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -343,9 +320,33 @@
                                 </svg>
                             </button>
                         </div>
+                        <div class="custom-select left">
+                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <select name="" id="">
+                                <option value="">Sort by</option>
+                                <option value="all">ID</option>
+                                <option value="date">Order date</option>
+                                <option value="name">Order Name</option>
+                                <option value="value">Value</option>
+                                <option value="Status">Status</option>
+                            </select>
+                        </div>
+                        <div class="custom-select left">
+                            <svg class="drop-down-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                            <select name="" id="">
+                                <option selected value="ASC">ASC</option>
+                                <option value="DESC">DESC</option>
+                            </select>
+                        </div>
                     </form>
                     <div class="d-flex gap-1">
-                        <button class="def-logo-btn-1">
+                        <button data-name="add-new" data-role="header" data-group="modal" class="def-logo-btn-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -429,7 +430,7 @@
                                 <th>
                                     ID
                                 </th>
-                                <th data-serial="5">Description</th>
+                                <th class="always-hidden">Description</th>
                                 <th data-serial="4">
                                     Order date
                                 </th>
@@ -440,6 +441,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                          
                             <tr>
                                 <td class="fw-semibold">#O-00000001 </td>
                                 <td class="fw-semibold">This is description </td>
@@ -458,7 +460,18 @@
                                                     clip-rule="evenodd"></path>
                                             </svg>
                                         </a>
-                                        <a href="" class="tooltip-container group action-btn danger">
+                                        <button data-route="" data-form-id="2" data-name="update" data-role="header"
+                                            data-group="modal"
+                                            class="editModalButton tooltip-container group action-btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                                            </svg>
+                                        </button>
+                                        <a href="http://optimaize.test/admin/machine-type-groups/4" class="confirmation tooltip-container group action-btn danger"
+                                            target="_self" data-form-id="4" data-alert="Are you sure?"
+                                            data-form-method="DELETE">
                                             <svg viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path
                                                     d="M9.42857 5V13.3333H2.57143V5H9.42857ZM8.14286 0H3.85714L3 0.833333H0V2.5H12V0.833333H9L8.14286 0ZM11.1429 3.33333H0.857143V13.3333C0.857143 14.25 1.62857 15 2.57143 15H9.42857C10.3714 15 11.1429 14.25 11.1429 13.3333V3.33333Z"
@@ -474,7 +487,8 @@
 
                 <nav aria-label="Page navigation" class="row pagination-wrapper">
                     <div class="col-12 col-md-6">
-                        <div class="showing font-16 justify-content-center justify-content-md-start flex-wrap d-flex align-items-center gap-2">
+                        <div
+                            class="showing font-16 justify-content-center justify-content-md-start flex-wrap d-flex align-items-center gap-2">
                             <span>
                                 Showing 1 - 10 out of 100
                             </span>
@@ -527,6 +541,122 @@
             </main>
         </div>
     </div>
+
+    <!-- add modal -->
+
+    <div class="def-modal-container">
+        <div data-name="add-new" data-role="content" data-group="modal" class="def-modal">
+            <div class="def-modal-header">
+                <h2 class="def-modal-title">Add new</h2>
+                <button data-name="add-new" data-role="cancel" data-group="modal" class="def-modal-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="modal-cancel-btn">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="def-modal-body">
+                <form action="">
+                    <div>
+                        <label class="def-label" for="">Label</label>
+                        <input class="def-input" placeholder="Enter value" type="text">
+                    </div>
+                    <div class="def-modal-footer">
+                        <button data-name="add-new" data-role="cancel" data-group="modal" type="button"
+                            class="btn-cancel">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                            </svg>
+                            <span>Cancel</span>
+                        </button>
+                        <button type="button" class="btn-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                            </svg>
+                            <span>Create</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="update-modal-wrapper" class="def-modal-container">
+        <div data-name="update" data-role="content" data-group="modal" class="def-modal">
+            <div class="def-modal-header">
+                <h2 class="def-modal-title">Update</h2>
+                <button data-name="update" data-role="cancel" data-group="modal" class="def-modal-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="modal-cancel-btn">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="def-modal-body">
+                <div class="modal-content">
+                    <form id="update-form" action="">
+                        <div>
+                            <label class="def-label" for="">Label</label>
+                            <input class="def-input" placeholder="Enter value" type="text">
+                        </div>
+                        <div class="def-modal-footer">
+                            <button data-name="update" data-role="cancel" data-group="modal" type="button"
+                                class="btn-cancel">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                                </svg>
+                                <span>Cancel</span>
+                            </button>
+                            <button type="button" class="btn-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                                <span>Update</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-loading">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="flash-message" class="hidden lf-modal-box">
+        <div class="transition-opacity"></div>
+        <div class="lf-modal-content-wrapper">
+            <div id="lf-modal-content"
+                class="lf-modal-content">
+                <div class="d-flex w-100">
+                    <a href="javascript:"
+                        class="lf-close">&#10005;</a>
+                </div>
+                <div class="text-center mt-2 mb-4">
+                    <div id="lf-icon" class="lf-icon">
+                    </div>
+                    <p id="lf-message" class="lf-message"></p>
+                </div>
+                <div id="lf-button" class="lf-button hidden">
+                    <button
+                        class="lf-close flash-close-button"
+                        type="button">Cancel
+                    </button>
+                    <button class="lf-confirm"
+                        type="button">Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./public/js/app.js"></script>
+    <script src="./public/js/base.js"></script>
     <script src="./public/js/helper.js"></script>
     <script src="./public/js/sidebar.js"></script>
     <script src="./public/js/theme-switch.js"></script>
@@ -534,6 +664,20 @@
     <script src="./public/js/menu-drop-down.js"></script>
     <script src="./public/js/select-drop-down.js"></script>
     <script src="./public/js/datatable.js"></script>
+    <script src="./public/js/custom-crud.js"></script>
+    <script src="./public/js/anyToggle.js"></script>
+
+    <script>
+        document.querySelectorAll('.editModalButton').forEach(el => {
+            updateId = el.getAttribute("data-form-id");
+            let route = el.dataset.route;
+            let form = document.querySelector('#update-form')
+            let updateModalWrapper = document.querySelector('#update-modal-wrapper')
+            if (route, updateId) {
+                let data = fetchData({ route, form, modalWrapper: updateModalWrapper });
+            }
+        })
+    </script>
 </body>
 
 </html>

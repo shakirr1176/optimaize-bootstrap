@@ -48,6 +48,9 @@
   @include field-padding;
   border-radius: variable.$custom-radius;
   transition: all 300ms;
+  svg, img {
+    width: 16px;  
+  }
 }
 
 .btn-1 {
@@ -336,6 +339,7 @@
   & i {
     width: 16px;
     height: 16px;
+    pointer-events: none;
   }
 
   &.danger {
@@ -457,5 +461,23 @@
   }
   100% {
       opacity: 1;
+  }
+}
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid variable.$primary;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

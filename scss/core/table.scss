@@ -159,6 +159,7 @@ $pagination-active-text-color: #fff;
           }
 
           &.child-td {
+            background: rgba(variable.$primary, 0.1);
             &:has(ul:empty) {
               display: none;
             }
@@ -179,6 +180,11 @@ $pagination-active-text-color: #fff;
                 }
               }
             }
+          }
+        }
+        &.child{
+          &:has(.child-td ul:empty) {
+            display: none;
           }
         }
       }

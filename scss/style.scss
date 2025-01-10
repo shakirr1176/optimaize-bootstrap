@@ -30,7 +30,7 @@ body {
     text-decoration: none;
     color: variable.$primary;
   }
-
+  
   ul {
     list-style: none;
     padding: 0;
@@ -39,6 +39,9 @@ body {
   main {
     padding: 24px;
     padding-top: 0;
+  }
+  .hidden{
+    display: none;
   }
 }
 
@@ -56,4 +59,5 @@ body.dark {
 @import "./core/custom-dropdown.scss";
 @import "./core/filter.scss";
 @import "./core/breadcrumb.scss";
+@import "./core/modal.scss";
 @import "./core/dark";
