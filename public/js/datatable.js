@@ -138,14 +138,29 @@ function addingListHtml(thisRow, newRow) {
   }
 }
 
+let prevWidth = window.innerWidth;
+
 function responsiveTableFunc() {
   let table = tableWrapper?.querySelector("table");
   if (!table) return;
+
+  if (prevWidth < window.innerWidth) {
+    let responsiveHidden = table.querySelectorAll(".responsive-hidden");
+    if (responsiveHidden && responsiveHidden.length > 0) {
+      responsiveHidden.forEach((el) => {
+        el.classList.remove("no-display");
+        el.classList.remove("responsive-hidden");
+      });
+      showRowBtnManage();
+    }
+  }
+
+  prevWidth = window.innerWidth;
+
   let tableWrapperWidth = tableWrapper.clientWidth;
   let tableWidth = table.clientWidth;
 
   if (tableWidth <= tableWrapperWidth) {
-    restoreColumns();
     return;
   }
 
@@ -161,17 +176,13 @@ function responsiveTableFunc() {
 
   if (!minSerialTh) return;
 
-  minSerialTh.classList.add("no-display");
-
-  minSerialTh.setAttribute("data-screen-size", window.innerWidth);
-
-  hiddenColumns.push(minSerialTh);
+  minSerialTh.classList.add("no-display", "responsive-hidden");
 
   let colIndex = minSerialTh.cellIndex;
 
   table.querySelectorAll("tbody tr:not(.child)").forEach((row) => {
     let col = row.children[colIndex];
-    col?.classList.add("no-display");
+    col?.classList.add("no-display", "responsive-hidden");
   });
 
   showRowBtnManage();
@@ -189,42 +200,6 @@ function responsiveTableFunc() {
   tableWidth = table.clientWidth;
   if (tableWidth > tableWrapperWidth) {
     responsiveTableFunc();
-  }
-}
-
-function restoreColumns() {
-  if (hiddenColumns.length === 0) return;
-
-  hiddenColumns.forEach((col, index) => {
-    const screenSize = col.getAttribute("data-screen-size");
-
-    if (window.innerWidth > parseInt(screenSize)) {
-      col.classList.remove("no-display");
-
-      let colIndex = col.cellIndex;
-      responsiveTable
-        ?.querySelectorAll("tbody tr:not(.child)")
-        .forEach((row) => {
-          let column = row.children[colIndex];
-          if (column) column.classList.remove("no-display");
-        });
-
-      hiddenColumns.splice(index, 1);
-
-      col.removeAttribute("data-screen-size");
-    }
-  });
-
-  showRowBtnManage();
-
-  let parentRows = responsiveTable?.querySelectorAll("tbody .parent");
-  if (parentRows && parentRows.length > 0) {
-    parentRows.forEach((row) => {
-      let newRow = row?.nextElementSibling;
-      if (newRow.classList.contains("child")) {
-        addingListHtml(row, newRow);
-      }
-    });
   }
 }
 
