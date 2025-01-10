@@ -13944,6 +13944,9 @@ h1 span {
   padding: 10px 14px;
   white-space: normal;
 }
+.def-table table tbody tr td.child-td:has(ul:empty) {
+  display: none;
+}
 .def-table table tbody tr td.child-td ul li {
   display: inline-block;
   padding: 3px 5px 5px;
@@ -13951,6 +13954,7 @@ h1 span {
 }
 .def-table table tbody tr td.child-td ul li label {
   font-weight: bold;
+  text-transform: capitalize;
 }
 .def-table table tbody tr td.child-td ul li .content {
   padding: 3px 5px 5px;

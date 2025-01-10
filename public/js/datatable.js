@@ -1,5 +1,4 @@
 let responsiveTable = document.querySelector(".def-table");
-let hiddenColumns = [];
 let tableWrapper = responsiveTable;
 
 window.onload = () => {
@@ -30,7 +29,7 @@ function initializeTableRows() {
     }
   }
 
-  if (allTr.length > 1) {
+  if (allTr && allTr.length > 0) {
     allTr.forEach((tr, i) => {
       tr.classList.add(i % 2 === 0 ? "odd" : "even");
 
@@ -42,10 +41,10 @@ function initializeTableRows() {
         div.className = "first-column";
         div.innerHTML = `
           <button class="tableDropBtn">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="plus">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="plus">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
             </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="minus">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="minus">
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15"></path>
             </svg>
           </button>
@@ -95,12 +94,14 @@ function toggleRow(btn) {
   thisRow.classList.toggle("parent");
   btn.classList.toggle("active");
 
-  if (thisRow.classList.contains("parent")) {
+  if (
+    thisRow.classList.contains("parent") &&
+    btn.classList.contains("active")
+  ) {
     let newRow = document.createElement("tr");
     newRow.className = "child";
     thisRow.insertAdjacentElement("afterEnd", newRow);
-
-    addingListHtml(thisRow, newRow);
+    addingListHtml();
   } else {
     let nextRow = thisRow.nextElementSibling;
     if (nextRow?.classList.contains("child")) {
@@ -109,33 +110,42 @@ function toggleRow(btn) {
   }
 }
 
-function addingListHtml(thisRow, newRow) {
-  let noDisplayTd = thisRow.querySelectorAll(".no-display");
+function addingListHtml() {
+  let parentRows = responsiveTable?.querySelectorAll("tbody .parent");
+  if (!parentRows || parentRows.length <= 0) return;
 
-  if (noDisplayTd && noDisplayTd.length > 0) {
-    let listUl = document.createElement("ul");
-    let thead = responsiveTable?.querySelectorAll("thead tr th");
+  parentRows.forEach((row) => {
+    let newRow = row?.nextElementSibling;
+    if (newRow?.classList.contains("child")) {
+      newRow.innerHTML = "";
+      let noDisplayTd = row.querySelectorAll(".no-display");
 
-    noDisplayTd.forEach((el) => {
-      let cellNum = el.cellIndex;
+      let listUl = document.createElement("ul");
+      if (noDisplayTd && noDisplayTd.length > 0) {
+        let thead = responsiveTable?.querySelectorAll("thead tr th");
 
-      if (!thead || thead.length <= 0) return;
+        noDisplayTd.forEach((el) => {
+          let cellNum = el.cellIndex;
 
-      let theadTh = thead[cellNum];
-      if (!theadTh) return;
+          if (!thead || thead.length <= 0) return;
 
-      let label = theadTh.innerText;
-      let content = el.innerHTML;
-      listUl.innerHTML += `
-      <li>
-      <label>${label}:</label>
-      <span class="content">${content}</span>
-      </li>`;
-    });
+          let theadTh = thead[cellNum];
+          if (!theadTh) return;
 
-    newRow.innerHTML = `<td class="child-td">${listUl.outerHTML}</td>`;
-    newRow.children[0].setAttribute("colspan", thisRow.children.length);
-  }
+          let label = theadTh.dataset.label || theadTh.innerText;
+          let content = el.innerHTML;
+          listUl.innerHTML += `
+              <li>
+              <label>${label}:</label>
+              <span class="content">${content}</span>
+              </li>`;
+        });
+        
+        newRow.innerHTML = `<td class="child-td">${listUl.outerHTML}</td>`;
+        newRow.children[0].setAttribute("colspan", row.children.length);
+      }
+    }
+  });
 }
 
 let prevWidth = window.innerWidth;
@@ -152,6 +162,7 @@ function responsiveTableFunc() {
         el.classList.remove("responsive-hidden");
       });
       showRowBtnManage();
+      addingListHtml();
     }
   }
 
@@ -185,17 +196,11 @@ function responsiveTableFunc() {
     col?.classList.add("no-display", "responsive-hidden");
   });
 
+  addingListHtml();
+
   showRowBtnManage();
 
-  let parentRows = table.querySelectorAll("tbody .parent");
-  if (parentRows && parentRows.length > 0) {
-    parentRows.forEach((row) => {
-      let newRow = row?.nextElementSibling;
-      if (newRow.classList.contains("child")) {
-        addingListHtml(row, newRow);
-      }
-    });
-  }
+  
 
   tableWidth = table.clientWidth;
   if (tableWidth > tableWrapperWidth) {

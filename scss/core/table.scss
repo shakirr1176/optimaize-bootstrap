@@ -159,6 +159,9 @@ $pagination-active-text-color: #fff;
           }
 
           &.child-td {
+            &:has(ul:empty) {
+              display: none;
+            }
             border-radius: variable.$custom-radius;
             padding: 10px 14px;
             white-space: normal;
@@ -169,6 +172,7 @@ $pagination-active-text-color: #fff;
                 padding-left: 0;
                 label {
                   font-weight: bold;
+                  text-transform: capitalize;
                 }
                 .content {
                   padding: 3px 5px 5px;
@@ -212,9 +216,6 @@ $pagination-active-text-color: #fff;
 
 // Pagination styles
 .pagination-wrapper {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: space-between;
   align-items: center;
   margin: 20px 0;
   .showing {
