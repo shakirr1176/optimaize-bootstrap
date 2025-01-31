@@ -366,11 +366,17 @@
                 .querySelectorAll(".lf-modal-box")
                 .forEach(function (modelItem) {
                     if (modelItem.getAttribute("data-form-id")) {
-                        document
+                        if(document
                             .getElementById(
                                 modelItem.getAttribute("data-form-id")
-                            )
-                            .remove();
+                            )){
+
+                                document
+                                  .getElementById(
+                                    modelItem.getAttribute("data-form-id")
+                                  )
+                                  .remove();
+                            }
                     }
                     if (
                         !document

@@ -1,0 +1,63 @@
+@use "variable";
+
+.list__item {
+  position: relative;
+
+  &.is-idle {
+    transition: 0.25s ease transform;
+  }
+
+  &.is-draggable {
+    z-index: 10;
+  }
+}
+
+.drag-with {
+  will-change: transform;
+  cursor: move;
+
+  &.is-draggable {
+    cursor: grabbing;
+
+    .drag-handle {
+      cursor: grabbing;
+    }
+  }
+
+   &.not-draggable {
+    cursor: default;
+  }
+}
+
+.list {
+  &.editing {
+    .drag-with {
+      cursor: default;
+    }
+
+    .edit-date-field {
+      &:not(.active) {
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      &.active > div {
+        background-color: variable.$primary; // Assuming `$lara-primary` is a predefined SCSS variable
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.list-design-wrapper {
+
+  
+  li {
+    @include font-16;
+    text-transform: capitalize;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background: variable.$optm-gray-300;
+  }
+}

@@ -129,6 +129,23 @@
     }
   }
 
+  function insertValueOnForm(form, data) {
+    let formData = new FormData(form);
+    let keyWithoutArray;
+    for (let [key] of formData) {
+        if (key.endsWith("[]")) {
+            keyWithoutArray = key.replace("[", "").replace("]", "");
+            if (keyWithoutArray in data) {
+                insertValueOnField(key, form, data);
+            }
+        }
+
+        if (key in data) {
+            insertValueOnField(key, form, data);
+        }
+    }
+}
+
   async function submit(route, form, method, submitButtonId, isLoad = true) {
     let formData = new FormData(form);
     formData.append(

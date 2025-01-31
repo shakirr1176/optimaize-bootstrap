@@ -1,0 +1,22 @@
+@use "variable";
+
+.tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: variable.$optm-gray-300;
+  width: 100%;
+  border-radius: variable.$custom-radius;
+
+  .tag-coms-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    &.empty-hidden:empty {
+      display: none;
+    }
+  }
+}

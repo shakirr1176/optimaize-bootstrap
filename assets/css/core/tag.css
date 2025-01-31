@@ -1,0 +1,21 @@
+.tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: rgba(74, 63, 110, 0.1019607843);
+  width: 100%;
+  border-radius: 12px;
+}
+.tag-wrapper .tag-coms-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.tag-wrapper .tag-coms-list.empty-hidden:empty {
+  display: none;
+}
+
+/*# sourceMappingURL=tag.css.map */

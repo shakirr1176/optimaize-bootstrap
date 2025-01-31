@@ -537,7 +537,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, background 0.3s;
   }
-  
+
   &:has(input[type="checkbox"]:checked)::before {
     transform: translateX(26px);
     background: variable.$primary;
@@ -577,5 +577,60 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.tag-com {
+  @include font-14;
+  position: relative;
+  display: flex;
+  width: fit-content;
+  min-width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding: 10px 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+  background: variable.$primary;
+  color: black;
+  font-weight: 500;
+  line-height: 100%;
+
+  &.add-btn{
+    background: transparent;
+    border: 2px solid gray;
+
+    i,svg{
+      font-size: 16px;
+    }
+  }
+  .edit-tag{
+    i,svg{
+      width: 12px;
+      font-size: 16px;
+    }
+  }
+  .remove-tag {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    font-size: 16px;
+    border-radius: 50%;
+    background: variable.$danger;
+    color: variable.$white;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: -4px;
+    cursor: pointer;
+    display: none;
+  }
+
+  &:hover {
+    .remove-tag {
+      display: flex;
+    }
   }
 }

@@ -1,0 +1,173 @@
+/* toaster */
+
+$success: #4e8d7c;
+$success-deep: #045762;
+
+$error: #db3056;
+$error-deep: #851d41;
+
+$warning: #fc8621;
+$warning-deep: #c24914;
+
+$info: #0070e0;
+$info-deep: #05478a;
+
+.toaster-container {
+  position: fixed;
+  top: 0;
+  right: 16px;
+  z-index: 99;
+  margin-top: 90px;
+  padding-bottom: 16px;
+
+  .toaster-pop-up {
+
+    &.toaster-pop-up-hidden{
+      opacity: 0;
+      transform: translateX(108%);
+    }
+
+    width: 300px;
+    background-color: $info;
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .toaster-cancel-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 10;
+      width: 1.25rem;
+      height: 1.25rem;
+      stroke-width: 2;
+      transition: opacity 0.5s;
+      color: white;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      & > * {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .icon-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0.75rem;
+      padding: 0.5rem;
+      transform: translateY(-50%);
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 0.75rem;
+      border-radius: 9999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      & > * {
+        width: 100%;
+        height: 100%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 1rem;
+        height: 1rem;
+        display: block;
+        bottom: -2px;
+        left: 8px;
+        transform: rotate(-18deg);
+        z-index: -10;
+      }
+    }
+
+    .msg-body {
+      padding: 16px;
+      padding-left: 56px;
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        display: block;
+        bottom: -12px;
+        left: 0.5rem;
+        border-radius: 50%;
+        transform: translateX(-50%) translateY(50%);
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        width: 0.75rem;
+        height: 0.75rem;
+        display: block;
+        bottom: 2rem;
+        left: 1rem;
+        border-radius: 50%;
+      }
+
+      .title {
+        @include font-20;
+        text-transform: capitalize;
+        font-size: 20px;
+      }
+      .msg {
+        @include font-14;
+        font-weight: 500;
+      }
+    }
+
+    // config color
+    &.success {
+      background-color: $success;
+      .icon-wrapper,
+      .icon-wrapper::after,
+      .msg-body::after,
+      .msg-body::before {
+        background-color: $success-deep;
+      }
+    }
+
+    &.error {
+      background-color: $error;
+
+      .icon-wrapper,
+      .icon-wrapper::after,
+      .msg-body::after,
+      .msg-body::before {
+        background-color: $error-deep;
+      }
+    }
+
+    &.warning {
+      background-color: $warning;
+      .icon-wrapper,
+      .icon-wrapper::after,
+      .msg-body::after,
+      .msg-body::before {
+        background-color: $warning-deep;
+      }
+    }
+
+    &.info {
+      background-color: $info;
+      .icon-wrapper,
+      .icon-wrapper::after,
+      .msg-body::after,
+      .msg-body::before {
+        background-color: $info-deep;
+      }
+    }
+  }
+}

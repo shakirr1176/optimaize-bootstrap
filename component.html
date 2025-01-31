@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="gradient-circle dark:hidden"></div>
+    <div class="main-layout d-flex min-vh-100">
+        <div id="collapse-sidebar" class="expand-sidebar">
+            <div class="flex-1">
+                <div class="shadow-layer"></div>
+                <div class="icon-wrapper">
+                    <a class="w-100" href="http://optimaize.test">
+
+                        <img class="menu-logo-expand" src="http://optimaize.test/storage/images/logo-dark.png" alt="">
+
+                        <!-- <img class="menu-logo-expand"
+                            src="http://optimaize.test/storage/images/logo.png" alt=""> -->
+
+                        <!-- <img class="dark menu-logo-collapse"
+                            src="http://optimaize.test/storage/images/logo-sm.png" alt=""> -->
+
+                        <img class="light menu-logo-collapse"
+                            src="http://optimaize.test/storage/images/logo-sm-dark.png" alt="">
+                    </a>
+                </div>
+                <div class="root-item drop-down-item">
+                    <ul class="duration-300 sidebar-bg w-full">
+                        <li class="position-relative">
+                            <a href="index.html" title="Dashbaord" class="drop-down-header">
+                                <span class="d-flex align-items-center fw-medium">
+                                    <span class="menu-icon">
+                                        <svg class="w-100" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true" data-slot="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25">
+                                            </path>
+                                        </svg> </span>
+                                    <span class="menu-title">Dashbaord</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="position-relative">
+                            <a href="javascript:" title="Application Control" class="drop-down-header">
+                                <span class="d-flex align-items-center fw-medium">
+                                    <span class="menu-icon">
+                                        <svg class="w-100" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                            viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                            aria-hidden="true" data-slot="icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75">
+                                            </path>
+                                        </svg> </span>
+                                    <span class="menu-title">Application
+                                        Control</span>
+                                </span>
+                                <svg class="menu-arrow" width="7" height="11" viewBox="0 0 7 11" fill="none">
+                                    <path
+                                        d="M6.66323 4.98326C6.73019 5.05022 6.76367 5.12723 6.76367 5.21429C6.76367 5.30134 6.73019 5.37835 6.66323 5.44531L1.98242 10.1261C1.91546 10.1931 1.83845 10.2266 1.7514 10.2266C1.66434 10.2266 1.58733 10.1931 1.52037 10.1261L1.01814 9.62388C0.951172 9.55692 0.91769 9.47991 0.91769 9.39286C0.91769 9.3058 0.951172 9.22879 1.01814 9.16183L4.96568 5.21429L1.01814 1.26674C0.951172 1.19978 0.91769 1.12277 0.91769 1.03571C0.91769 0.94866 0.951172 0.871651 1.01814 0.804688L1.52037 0.302455C1.58733 0.23549 1.66434 0.202008 1.7514 0.202008C1.83845 0.202008 1.91546 0.23549 1.98242 0.302455L6.66323 4.98326Z"
+                                        fill="currentColor" fill-opacity="0.8"></path>
+                                </svg>
+                            </a>
+                            <div class="drop-down-item overflow-hidden sub-item" data-collapse="false"
+                                style="height: 0px;">
+                                <ul class="duration-300 sidebar-bg w-100">
+                                    <li class="position-relative">
+                                        <span class="header-line">
+                                        </span>
+                                        <a href="javascript:;" title="Application Setting" class="drop-down-header ">
+                                            <span class="">
+                                                Application Setting
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="position-relative">
+                                        <span class="header-line">
+                                        </span>
+                                        <a href="http://optimaize.test/admin/roles" title="Role Management"
+                                            class="drop-down-header ">
+                                            <span class="">
+                                                Role Management
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="position-relative">
+                                        <span class="header-line">
+                                        </span>
+                                        <a href="javascript:;" title="Language Management" class="drop-down-header">
+                                            <span class="">
+                                                Language Management
+                                            </span>
+                                            <svg class="menu-arrow" width="7" height="11" viewBox="0 0 7 11"
+                                                fill="none">
+                                                <path
+                                                    d="M6.66323 4.98326C6.73019 5.05022 6.76367 5.12723 6.76367 5.21429C6.76367 5.30134 6.73019 5.37835 6.66323 5.44531L1.98242 10.1261C1.91546 10.1931 1.83845 10.2266 1.7514 10.2266C1.66434 10.2266 1.58733 10.1931 1.52037 10.1261L1.01814 9.62388C0.951172 9.55692 0.91769 9.47991 0.91769 9.39286C0.91769 9.3058 0.951172 9.22879 1.01814 9.16183L4.96568 5.21429L1.01814 1.26674C0.951172 1.19978 0.91769 1.12277 0.91769 1.03571C0.91769 0.94866 0.951172 0.871651 1.01814 0.804688L1.52037 0.302455C1.58733 0.23549 1.66434 0.202008 1.7514 0.202008C1.83845 0.202008 1.91546 0.23549 1.98242 0.302455L6.66323 4.98326Z"
+                                                    fill="currentColor" fill-opacity="0.8"></path>
+                                            </svg>
+                                        </a>
+                                        <div class="drop-down-item overflow-hidden" data-collapse="false"
+                                            style="height: 0px;">
+                                            <ul class="duration-300 sidebar-bg w-full">
+                                                <li class="position-relative">
+                                                    <span class="header-line">
+                                                    </span>
+                                                    <a href="javascript:;" title="Language List"
+                                                        class="drop-down-header ">
+                                                        <span class="">
+                                                            Language List
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="position-relative">
+                                                    <span class="header-line">
+                                                    </span>
+                                                    <a href="javascript:;" title="Language Setting"
+                                                        class="drop-down-header ">
+                                                        <span class="">
+                                                            Language Setting
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="position-relative">
+                                        <span class="header-line">
+                                        </span>
+                                        <a href="javascript:;" title="Logs" class="drop-down-header">
+                                            <span class="">
+                                                Logs
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="position-relative">
+                            <a href="datatable.html" title="Dashbaord" class="drop-down-header">
+                                <span class="d-flex align-items-center fw-medium">
+                                    <span class="menu-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            strokeWidth={1.5} stroke="currentColor" className="w-100">
+                                            <path strokeLinecap="round" strokeLinejoin="round"
+                                                d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                                        </svg>
+                                    </span>
+                                    <span class="menu-title">Datatable</span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="position-relative">
+                            <a href="component.html" title="Component" class="drop-down-header active-on">
+                                <span class="d-flex align-items-center fw-medium">
+                                    <span class="menu-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
+                                        </svg>
+                                    </span>
+                                    <span class="menu-title">Component</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="sidebar-footer">
+                <li class="position-relative">
+                    <a href="javascript:;" title="logout" class="drop-down-header">
+                        <span class="d-flex align-items-center fw-medium">
+                            <span class="menu-icon">
+                                <svg class="w-100" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15">
+                                    </path>
+                                </svg>
+                            </span>
+                            <span class="menu-title">Logout</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="d-flex flex-column main-content overflow-auto w-100 main-section-scroll">
+            <header class="gap-2 justify-content-between align-items-center">
+                <button id="sidebar-collapse-button">
+                    <svg stroke="currentColor" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="2.00152e-07" y1="16.5" x2="20" y2="16.5" stroke="currentColor" stroke-width="3">
+                        </line>
+                        <line x1="2.23158e-07" y1="9" x2="20" y2="9" stroke="currentColor" stroke-width="3"></line>
+                        <line x1="2.23158e-07" y1="1.5" x2="13.3333" y2="1.5" stroke="currentColor" stroke-width="3">
+                        </line>
+                    </svg>
+                </button>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="position-relative">
+                        <span class="notification-number-wrapper">
+                            0
+                        </span>
+                        <button class="icon-btn dropdown-box">
+                            <svg class="" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0">
+                                </path>
+                            </svg>
+                        </button>
+                        <div class="d-none dropdown-show-box notifications-wrapper">
+                            <div class="notifications">
+                                <div class="content font-16">
+                                    You have 0 notifications
+                                </div>
+                                <ul class="notifications-list font-16">
+                                    <li class="">
+                                    </li>
+                                </ul>
+                                <div class="see-all font-14">
+                                    <a href="javascript:;">See All Notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dark-light icon-btn">
+                        <span class="relative pointer-events-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="light-icon">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z">
+                                </path>
+                            </svg>
+
+                            <svg class="dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z">
+                                </path>
+                            </svg>
+                        </span>
+                    </div>
+
+                    <div class="language position-relative">
+                        <button class="icon-btn font-16 dropdown-box">
+                            EN
+                        </button>
+                        <ul class="d-none dropdown-show-box">
+                            <li><a class="dropdown-list-color active" href="#" onclick="setLang('en')">EN</a></li>
+                            <li><a class="dropdown-list-color" href="#" onclick="setLang('pt')">PT</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="profile position-relative">
+                        <div class="font-16 dropdown-box">
+                            <img src="http://optimaize.test/storage/images/users/avatar.jpg" alt="">
+                        </div>
+                        <div class="d-none dropdown-show-box">
+                            <div class="profile-info d-flex p-2 align-items-center gap-2">
+                                <img class="drop-avatar" src="http://optimaize.test/storage/images/users/avatar.jpg"
+                                    alt="">
+                                <div class="text-start">
+                                    <h3 class="text-ellipsis font-14 font-medium uppercas">
+                                        Jules
+                                    </h3>
+                                    <p class="text-ellipsis font-12">
+                                        System-admin
+                                    </p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li><a class="dropdown-list-color" href="#">Profile</a></li>
+                                <li><a class="dropdown-list-color" href="#">Edit profile</a></li>
+                                <li><a class="dropdown-list-color" href="#">Setting</a></li>
+                                <li><a class="dropdown-list-color" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main class="flex-1">
+
+                <h4 class="font-20 fw-semibold mb-2">Add tag</h4>
+
+                <div id="assign-operations"
+                    class="modal-parent-container tag-wrapper">
+                    <div class="tag-coms-list empty-hidden">
+                        <input type="hidden" name="assign_operations">
+                        <div class="tag-com-js tag-com">
+                            <span>operation name</span>
+                            <input type="hidden" name=""
+                                value="">
+                            <button class="edit-tag-js edit-tag">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                                  </svg>                                  
+                            </button>
+                            <button class="remove-tag-js remove-tag" type="button">
+                                -
+                            </button>
+                        </div>
+                    </div>
+                    <button id="assign-operations-add-btn" class="modal-open-btn tag-com-js tag-com add-btn">
+                        <span>add more</span>
+                        <i>+</i>
+                    </button>
+                </div>
+                <p class="assign_operations error-message"></p>
+
+                <div class="col-6 mx-auto">
+                    <h4 class="font-20 fw-semibold mb-3">Draggable list</h4>
+                    <ul class="list-design-wrapper list js-list">
+                        <li class="list__item drag-with is-idle">
+                            item 1
+                        </li>
+                        <li class="list__item drag-with is-idle">
+                            item 2
+                        </li>
+                        <li class="list__item drag-with is-idle">
+                            item 3
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 mt-4 mx-auto">
+                    <h4 class="font-20 fw-semibold mb-3">Image upload</h4>
+
+                    <div class="upload-file-wrapper">
+                        <div class="drop-area">
+                            <svg class="alter-icon w-12" xmlns="http://www.w3.org/2000/svg" height="24px"
+                                viewBox="0 0 24 24" width="24px" fill="#000000">
+                                <path d="M0 0h24v24H0V0z" fill="none"></path>
+                                <path
+                                    d="M18 20H4V6h9V4H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-9h-2v9zm-7.79-3.17l-1.96-2.36L5.5 18h11l-3.54-4.71zM20 4V1h-2v3h-3c.01.01 0 2 0 2h3v2.99c.01.01 2 0 2 0V6h3V4h-3z">
+                                </path>
+                            </svg>
+                            <div class="uploaded-image-wrapper d-none">
+                            </div>
+                        </div>
+                        <div class="image-remove-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                aria-hidden="true" data-slot="icon">
+                                <path fill-rule="evenodd"
+                                    d="M8.75 1A2.75 2.75 0 0 0 6 3.75v.443c-.795.077-1.584.176-2.365.298a.75.75 0 1 0 .23 1.482l.149-.022.841 10.518A2.75 2.75 0 0 0 7.596 19h4.807a2.75 2.75 0 0 0 2.742-2.53l.841-10.52.149.023a.75.75 0 0 0 .23-1.482A41.03 41.03 0 0 0 14 4.193V3.75A2.75 2.75 0 0 0 11.25 1h-2.5ZM10 4c.84 0 1.673.025 2.5.075V3.75c0-.69-.56-1.25-1.25-1.25h-2.5c-.69 0-1.25.56-1.25 1.25v.325C8.327 4.025 9.16 4 10 4ZM8.58 7.72a.75.75 0 0 0-1.5.06l.3 7.5a.75.75 0 1 0 1.5-.06l-.3-7.5Zm4.34.06a.75.75 0 1 0-1.5-.06l-.3 7.5a.75.75 0 1 0 1.5.06l.3-7.5Z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <input class="uploadImgBtn" type="file" name="" value="" id="" hidden="">
+                    </div>
+                </div>
+                <div class="col-6 mt-4 mx-auto">
+                    <button class="btn-2 px-5" id="save-data">Save</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="./public/js/app.js"></script>
+    <script src="./public/js/base.js"></script>
+    <script src="./public/js/helper.js"></script>
+    <script src="./public/js/menu-drop-down.js"></script>
+    <script src="./public/js/sidebar.js"></script>
+    <script src="./public/js/theme-switch.js"></script>
+    <script src="./public/js/header.js"></script>
+    <script src="./public/js/draggable.js"></script>
+    <script src="./public/js/file-upload.js"></script>
+    <script src="./public/js/toaster/toaster-config.js"></script>
+    <script src="./public/js/toaster/toaster.js"></script>
+
+    <script>
+
+        window.addEventListener('load', () => {
+            initializeDrag()
+        })
+
+    </script>
+
+    <script>
+        let uploadFileWrapper = document.querySelectorAll(".upload-file-wrapper");
+
+        uploadFileWrapper?.forEach((itm) => {
+            fileUpload(itm, {
+                onChange: (para) => {
+                    console.log(para);
+                },
+                onRemove: (para) => {
+                    console.log(para);
+                }
+            });
+        });
+    </script>
+
+    <!-- toaster -->
+    <script>
+        window.addEventListener("load", () => {
+            toaster({
+                status: 'success',
+                body: 'Login successfully',
+            });
+        })
+
+        document.getElementById("save-data").addEventListener("click", () => {
+            toaster({
+                status: 'info',
+                title: 'information',
+                body: 'Data saved successfully',
+            });
+        })
+    </script>
+</body>
+
+</html>
